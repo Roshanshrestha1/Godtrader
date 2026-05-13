@@ -1,6 +1,6 @@
 """
 Super AI Trader - Main Entry Point
-Runs the async trading loop and initializes all components.
+Runs the async trading loop and initializes all components including Telegram bot.
 """
 
 import asyncio
@@ -8,8 +8,9 @@ import logging
 import signal
 from datetime import datetime
 
-from config import LOG_LEVEL, LOG_FILE
+from config import LOG_LEVEL, LOG_FILE, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 from master_brain import MasterBrain
+from telegram_bot import TelegramBot
 
 
 # Configure logging
@@ -33,8 +34,17 @@ class SuperAITrader:
     def __init__(self):
         from config import DATA_SOURCE
         self.master_brain = MasterBrain(data_source=DATA_SOURCE)
+        self.telegram_bot = None
         self.running = False
         self._shutdown_event = asyncio.Event()
+        
+        # Initialize Telegram bot if token is configured
+        if TELEGRAM_BOT_TOKEN and TELEGRAM_BOT_TOKEN != "YOUR_BOT_TOKEN_HERE":
+            self.telegram_bot = TelegramBot(
+                token=TELEGRAM_BOT_TOKEN,
+                chat_id=TELEGRAM_CHAT_ID
+            )
+            self.telegram_bot.set_master_brain(self.master_brain)
         
         # Setup signal handlers for graceful shutdown
         signal.signal(signal.SIGINT, self._signal_handler)
@@ -61,6 +71,11 @@ class SuperAITrader:
             else:
                 logger.error("❌ Failed to connect to data source")
                 return
+            
+            # Start Telegram bot if configured
+            if self.telegram_bot:
+                await self.telegram_bot.start()
+                logger.info("✅ Telegram Bot started - Use /menu for interactive commands")
             
             # Display system configuration
             self._display_config()
@@ -117,6 +132,10 @@ class SuperAITrader:
                         # Format and log signal
                         message = self.master_brain.format_and_send_signal(sig)
                         logger.info(f"SIGNAL: {sig['symbol']} {sig['direction']} @ {sig['entry']:.5f}")
+                        
+                        # Send signal via Telegram bot
+                        if self.telegram_bot:
+                            await self.telegram_bot.send_signal(sig)
                 else:
                     logger.debug("No signals generated this cycle")
                 
@@ -150,6 +169,11 @@ class SuperAITrader:
         
         # Stop trading
         self.master_brain.stop_trading()
+        
+        # Stop Telegram bot
+        if self.telegram_bot:
+            await self.telegram_bot.stop()
+            logger.info("Telegram Bot stopped")
         
         # Disconnect from MT5
         self.master_brain.data_fetcher.disconnect()
