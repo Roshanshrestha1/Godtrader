@@ -1,16 +1,18 @@
-# Stable Stock Analysis System Configuration
+# Aggressive Trading Analysis System Configuration
+# Optimized for finding more trade opportunities
 
 analysis:
   main_timeframe: "1h"
-  entry_timeframe: "5m"
-  adx_threshold: 25
+  entry_timeframe: "15m"      # Lowered from 5m to find more entries
+  adx_threshold: 18            # Lowered from 25 to catch trend starts earlier
   ema_period: 200
   volume_sma_period: 20
   sweep_lookback_hours: 24
   
 risk:
-  default_stop_atr_multiplier: 1.5
+  default_stop_atr_multiplier: 2.0  # Wider SL (was 1.5) - gives trade room to breathe
   default_target_atr_multiplier: 3.0
+  max_volatility_pct: 10.0          # Allows trading more volatile pairs (was 5.0)
   
 data:
   max_staleness_seconds: 120
@@ -283,8 +285,8 @@ symbol_mapping:
 # Supported timeframes for analysis
 supported_timeframes: ["1m", "5m", "15m", "1h", "4h", "1d"]
 
-# Master Brain thresholds
+# Master Brain thresholds - Aggressive Settings
 master_brain:
-  min_agents_agree: 4
-  min_confidence: 65
-  agent5_veto_enabled: true
+  min_agents_agree: 3         # Lowered from 4 (allows 3/5 consensus for Tier 2 signals)
+  min_confidence: 60          # Lowered from 65 to catch more opportunities
+  agent5_veto_enabled: false  # Disabled hard veto - Agent 5 now reduces position size instead

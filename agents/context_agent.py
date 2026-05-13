@@ -49,6 +49,7 @@ class ContextAgent:
         
         reasons = []
         veto = False
+        risk_score = 0  # Start with low risk, add points for each risk factor
         
         # Calculate ATR
         df['atr'] = atr(df, self.atr_period)
@@ -61,21 +62,23 @@ class ContextAgent:
         
         reasons.append(f"Current ATR: {current_atr:.4f} ({atr_pct:.2f}% of price)")
         
-        # Condition 1: Excessive volatility
+        # Condition 1: Excessive volatility (Fix #4 - Risk Score instead of hard veto)
         if atr_pct > self.max_atr_pct:
-            veto = True
-            reasons.append(f"⚠️ VOLATILITY VETO: ATR ({atr_pct:.2f}%) exceeds maximum ({self.max_atr_pct}%) → Too risky")
+            risk_score += 40  # High volatility adds significant risk
+            reasons.append(f"⚠️ HIGH VOLATILITY: ATR ({atr_pct:.2f}%) exceeds maximum ({self.max_atr_pct}%) → +40 risk score")
         elif atr_pct > self.max_atr_pct * 0.7:
-            reasons.append("High volatility detected → Consider reducing position size")
+            risk_score += 20  # Medium volatility adds moderate risk
+            reasons.append("Medium volatility detected → +20 risk score")
         else:
-            reasons.append("Volatility within acceptable range")
+            reasons.append("Volatility within acceptable range → +0 risk score")
         
         # Condition 2: Volatility spike (potential news event)
         recent_atr_values = df['atr'].iloc[-5:].values
         avg_recent_atr = np.mean(recent_atr_values)
         
         if avg_recent_atr > avg_atr * 1.5:
-            reasons.append("Recent volatility spike detected → Possible news event, exercise caution")
+            risk_score += 15  # Volatility spike adds risk
+            reasons.append("Recent volatility spike detected → Possible news event, +15 risk score")
             if proposed_signal in ['BUY', 'SELL']:
                 reasons.append("Consider waiting for volatility to normalize before entering")
         
@@ -85,7 +88,8 @@ class ContextAgent:
         gap_pct = abs(current_open - prev_close) / prev_close * 100
         
         if gap_pct > 1.0:
-            reasons.append(f"Price gap detected: {gap_pct:.2f}% → Increased uncertainty")
+            risk_score += 15  # Gap adds risk
+            reasons.append(f"Price gap detected: {gap_pct:.2f}% → Increased uncertainty, +15 risk score")
             if proposed_signal in ['BUY', 'SELL']:
                 reasons.append("Gaps often get filled; wait for confirmation")
         
@@ -106,11 +110,13 @@ class ContextAgent:
                 break
         
         if consecutive_up >= 5:
-            reasons.append(f"5 consecutive bullish candles → Potential exhaustion, be cautious with BUY")
+            risk_score += 10  # Trend exhaustion adds risk
+            reasons.append(f"5 consecutive bullish candles → Potential exhaustion, +10 risk score")
             if proposed_signal == 'BUY':
                 reasons.append("Consider waiting for pullback before entering long")
         elif consecutive_down >= 5:
-            reasons.append(f"5 consecutive bearish candles → Potential exhaustion, be cautious with SELL")
+            risk_score += 10  # Trend exhaustion adds risk
+            reasons.append(f"5 consecutive bearish candles → Potential exhaustion, +10 risk score")
             if proposed_signal == 'SELL':
                 reasons.append("Consider waiting for bounce before entering short")
         
@@ -123,45 +129,41 @@ class ContextAgent:
         distance_to_low = (current_price - recent_low) / current_price * 100
         
         if distance_to_high < 1.0:
-            reasons.append(f"Price near 20-period high ({distance_to_high:.2f}% away) → Resistance test")
+            risk_score += 10  # Near resistance adds risk
+            reasons.append(f"Price near 20-period high ({distance_to_high:.2f}% away) → Resistance test, +10 risk score")
             if proposed_signal == 'BUY':
                 reasons.append("Buying at resistance is risky; wait for breakout confirmation")
         elif distance_to_low < 1.0:
-            reasons.append(f"Price near 20-period low ({distance_to_low:.2f}% away) → Support test")
+            risk_score += 10  # Near support adds risk
+            reasons.append(f"Price near 20-period low ({distance_to_low:.2f}% away) → Support test, +10 risk score")
             if proposed_signal == 'SELL':
                 reasons.append("Selling at support is risky; wait for breakdown confirmation")
         
-        # Determine final status
-        if veto:
+        # Cap risk score at 100
+        risk_score = min(100, risk_score)
+        
+        # Determine final status based on risk score (Fix #4)
+        if risk_score > 80:
             status = 'VETO'
+            veto = True
             confidence = 90
-            reasons.append("\n❌ FINAL DECISION: VETO - Trade too risky under current conditions")
+            reasons.append(f"\n🚫 FINAL DECISION: VETO - Extreme risk (Risk Score: {risk_score}/100)")
+        elif risk_score > 50:
+            status = 'APPROVE'
+            confidence = 60
+            reasons.append(f"\n⚠️ FINAL DECISION: APPROVE with HIGH RISK (Risk Score: {risk_score}/100) - Reduce position size")
         else:
             status = 'APPROVE'
-            confidence = 70
-            
-            # Adjust confidence based on risk factors
-            risk_factors = sum([
-                atr_pct > self.max_atr_pct * 0.7,
-                avg_recent_atr > avg_atr * 1.5,
-                gap_pct > 1.0,
-                consecutive_up >= 5 or consecutive_down >= 5,
-                distance_to_high < 1.0 or distance_to_low < 1.0
-            ])
-            
-            confidence -= risk_factors * 10
-            confidence = max(50, confidence)
-            
-            if risk_factors == 0:
-                reasons.append("\n✅ FINAL DECISION: APPROVE - Market conditions favorable")
-            else:
-                reasons.append(f"\n⚠️ FINAL DECISION: APPROVE with caution ({risk_factors} risk factors identified)")
+            confidence = 70 + (50 - risk_score)  # Higher confidence for lower risk
+            confidence = min(90, confidence)
+            reasons.append(f"\n✅ FINAL DECISION: APPROVE - Low risk environment (Risk Score: {risk_score}/100)")
         
         confidence = max(0, min(100, int(confidence)))
         
         return {
             'agent': 'ContextAgent',
             'status': status,
+            'risk_score': risk_score,  # New: Risk score for position sizing
             'confidence': confidence,
             'reasons': reasons,
             'veto': veto,

@@ -18,13 +18,16 @@ class IndicatorAgent:
     - Evaluate MACD for momentum and crossovers
     - Check Bollinger Bands for volatility and mean reversion
     - Combine signals for confluence
+    - Implement Mean Reversion logic when ADX is low (ranging market)
     - Output: BUY/SELL/HOLD with confidence score
     """
     
-    def __init__(self, rsi_period: int = 14, rsi_oversold: int = 30, rsi_overbought: int = 70):
+    def __init__(self, rsi_period: int = 14, rsi_oversold: int = 30, rsi_overbought: int = 70,
+                 adx_threshold: int = 20):
         self.rsi_period = rsi_period
         self.rsi_oversold = rsi_oversold
         self.rsi_overbought = rsi_overbought
+        self.adx_threshold = adx_threshold  # For detecting ranging markets
     
     def analyze(self, df: pd.DataFrame) -> Dict[str, Any]:
         """
@@ -77,23 +80,56 @@ class IndicatorAgent:
         
         current_ema_50 = df['ema_50'].iloc[-1]
         
-        # RSI Analysis
+        # Calculate ADX for mean reversion logic
+        from utils.indicators import adx
+        df['adx'] = adx(df, 14)
+        current_adx = df['adx'].iloc[-1]
+        
+        # Check if market is ranging (ADX < threshold)
+        is_ranging = current_adx < self.adx_threshold
+        
+        if is_ranging:
+            reasons.append(f"ADX is {current_adx:.1f} (< {self.adx_threshold}) → Ranging market detected")
+        else:
+            reasons.append(f"ADX is {current_adx:.1f} (> {self.adx_threshold}) → Trending market")
+        
+        # RSI Analysis - with Mean Reversion Logic for Ranging Markets
         rsi_signal = 'NEUTRAL'
         rsi_confidence = 0
         
-        if current_rsi < self.rsi_oversold:
-            rsi_signal = 'BUY'
-            rsi_confidence = 40 + (self.rsi_oversold - current_rsi)
-            reasons.append(f"RSI is {current_rsi:.1f} (oversold < {self.rsi_oversold}) → Potential reversal up")
-        elif current_rsi > self.rsi_overbought:
-            rsi_signal = 'SELL'
-            rsi_confidence = 40 + (current_rsi - self.rsi_overbought)
-            reasons.append(f"RSI is {current_rsi:.1f} (overbought > {self.rsi_overbought}) → Potential reversal down")
-        else:
-            reasons.append(f"RSI is {current_rsi:.1f} (neutral zone)")
+        # Check for Mean Reversion setup (Fix #3)
+        # In ranging markets, use RSI + Bollinger Bands for counter-trend trades
+        mean_reversion_active = False
+        
+        if is_ranging:
+            # Mean Reversion BUY: RSI < 30 AND Price at Lower BB
+            if current_rsi < 30 and current_price <= current_bb_lower:
+                rsi_signal = 'BUY'
+                rsi_confidence = 65  # Higher confidence for mean reversion confluence
+                reasons.append(f"🔄 MEAN REVERSION SIGNAL: RSI {current_rsi:.1f} + Price at Lower BB → Strong bounce expected")
+                mean_reversion_active = True
+            # Mean Reversion SELL: RSI > 70 AND Price at Upper BB
+            elif current_rsi > 70 and current_price >= current_bb_upper:
+                rsi_signal = 'SELL'
+                rsi_confidence = 65
+                reasons.append(f"🔄 MEAN REVERSION SIGNAL: RSI {current_rsi:.1f} + Price at Upper BB → Strong pullback expected")
+                mean_reversion_active = True
+        
+        # Standard RSI analysis (if no mean reversion signal)
+        if not mean_reversion_active:
+            if current_rsi < self.rsi_oversold:
+                rsi_signal = 'BUY'
+                rsi_confidence = 40 + (self.rsi_oversold - current_rsi)
+                reasons.append(f"RSI is {current_rsi:.1f} (oversold < {self.rsi_oversold}) → Potential reversal up")
+            elif current_rsi > self.rsi_overbought:
+                rsi_signal = 'SELL'
+                rsi_confidence = 40 + (current_rsi - self.rsi_overbought)
+                reasons.append(f"RSI is {current_rsi:.1f} (overbought > {self.rsi_overbought}) → Potential reversal down")
+            else:
+                reasons.append(f"RSI is {current_rsi:.1f} (neutral zone)")
         
         signals.append(rsi_signal)
-        confidences.append(min(60, rsi_confidence))
+        confidences.append(min(65, rsi_confidence))
         
         # MACD Analysis
         macd_signal = 'NEUTRAL'
@@ -173,6 +209,21 @@ class IndicatorAgent:
         
         total_weight = sum(confidences)
         avg_confidence = total_weight / len(confidences) if confidences else 0
+        
+        # Fix #5: Handle Indicator Conflict - Ignore RSI Overbought/Oversold in strong trends
+        # If ADX > 30 (strong trend), don't let RSI overbought/oversold cancel the trend signal
+        if current_adx > 30 and not is_ranging:
+            # In strong trends, RSI can stay overbought/oversold for extended periods
+            if mean_reversion_active:
+                # This was a mean reversion signal, but strong trend overrides it
+                reasons.append("⚠️ Strong trend detected (ADX > 30) - Mean reversion signal ignored")
+                # Recalculate without mean reversion
+                if current_price > current_ema_50:
+                    buy_signals += 1
+                    reasons.append("Strong uptrend - RSI overbought condition ignored per Fix #5")
+                elif current_price < current_ema_50:
+                    sell_signals += 1
+                    reasons.append("Strong downtrend - RSI oversold condition ignored per Fix #5")
         
         if buy_signals > sell_signals:
             signal = 'BUY'
