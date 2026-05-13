@@ -251,6 +251,10 @@ class MasterBrain:
         """
         Aggregate signals from all agents and make final decision.
         
+        Implements Tiered Consensus (Fix #2):
+        - Tier 1 (Strong): 4/5 Agents Agree (Confidence > 75%)
+        - Tier 2 (Moderate): 3/5 Agents Agree (Confidence > 60%)
+        
         Args:
             agent_results: Results from all 5 agents
             df: Price data DataFrame
@@ -260,6 +264,11 @@ class MasterBrain:
             Final decision dictionary
         """
         reasons = []
+        
+        # Debug: Print all agent signals (Diagnostic Tool)
+        logger.info("--- SIGNAL DEBUGGER ---")
+        for agent, vote in agent_results.items():
+            logger.info(f"{agent}: {vote.get('signal', 'N/A')} ({vote.get('confidence', 0)}%)")
         
         # Count votes
         buy_votes = 0
@@ -282,25 +291,62 @@ class MasterBrain:
             else:
                 hold_votes += 1
         
-        # Agent 5 (Context) has veto power
+        # Agent 5 (Context) - Now provides Risk Score instead of hard veto (Fix #4)
         agent5_result = agent_results.get('agent5', {})
         agent5_veto = agent5_result.get('veto', False)
         agent5_status = agent5_result.get('status', 'APPROVE')
+        agent5_risk_score = agent5_result.get('risk_score', 50)  # New: 0-100 risk score
         
-        # Determine preliminary signal
-        if buy_votes > sell_votes and buy_votes >= self.min_agents_agree:
-            preliminary_signal = 'BUY'
-        elif sell_votes > buy_votes and sell_votes >= self.min_agents_agree:
-            preliminary_signal = 'SELL'
+        # Determine preliminary signal with Tiered Consensus
+        max_votes = max(buy_votes, sell_votes)
+        dominant_signal = 'BUY' if buy_votes > sell_votes else ('SELL' if sell_votes > buy_votes else 'HOLD')
+        
+        # Tiered Consensus Logic (Fix #2)
+        preliminary_signal = 'HOLD'
+        tier_level = None
+        
+        if max_votes >= 4:
+            # Tier 1 (Strong): 4+ agents agree
+            preliminary_signal = dominant_signal
+            tier_level = "TIER_1_STRONG"
+            reasons.append(f"🎯 TIER 1 SIGNAL: {max_votes}/4 agents agree (Strong Consensus)")
+        elif max_votes >= 3:
+            # Tier 2 (Moderate): 3 agents agree
+            preliminary_signal = dominant_signal
+            tier_level = "TIER_2_MODERATE"
+            reasons.append(f"📊 TIER 2 SIGNAL: {max_votes}/4 agents agree (Moderate Consensus)")
         else:
             preliminary_signal = 'HOLD'
+            reasons.append(f"📊 Votes: {buy_votes} BUY, {sell_votes} SELL, {hold_votes} HOLD - No consensus")
         
-        # Apply Agent 5 veto
+        # Check for blocker reason (Diagnostic)
+        if preliminary_signal == 'HOLD' and max_votes < self.min_agents_agree:
+            logger.info(f"REASON FOR HOLD: Only {max_votes} {'BUY' if buy_votes > sell_votes else 'SELL'} votes. Need {self.min_agents_agree}.")
+        
+        # Apply Agent 5 Risk Score adjustment (Fix #4) - No hard veto when disabled
         veto_applied = False
+        position_size_adjustment = 1.0  # Default: 100% position size
+        
         if self.agent5_veto_enabled and agent5_veto and preliminary_signal != 'HOLD':
+            # Legacy: Hard veto still applies if enabled in config
             veto_applied = True
             preliminary_signal = 'HOLD'
             reasons.append("⚠️ Agent 5 (Context) VETO applied - Trade rejected due to risk factors")
+        elif not self.agent5_veto_enabled and preliminary_signal != 'HOLD':
+            # Fix #4: Instead of veto, adjust position size based on risk score
+            if agent5_risk_score > 70:
+                position_size_adjustment = 0.25  # High risk: 25% position
+                reasons.append(f"⚠️ High Risk Score ({agent5_risk_score}) - Position reduced to 25%")
+            elif agent5_risk_score > 50:
+                position_size_adjustment = 0.50  # Medium risk: 50% position
+                reasons.append(f"📊 Medium Risk Score ({agent5_risk_score}) - Position reduced to 50%")
+            else:
+                reasons.append(f"✅ Low Risk Score ({agent5_risk_score}) - Full position allowed")
+            
+            if agent5_status == 'REJECT' and agent5_risk_score > 80:
+                # Extreme risk - still reject the trade
+                preliminary_signal = 'HOLD'
+                reasons.append("🚫 EXTREME RISK - Trade rejected by Agent 5")
         
         # Calculate average confidence
         avg_confidence = sum(confidences) / len(confidences) if confidences else 0
@@ -344,7 +390,10 @@ class MasterBrain:
             'take_profit': tp,
             'reasons': reasons,
             'veto_applied': veto_applied,
-            'agents_agreeing': max(buy_votes, sell_votes)
+            'agents_agreeing': max(buy_votes, sell_votes),
+            'tier_level': tier_level,
+            'position_size_adjustment': position_size_adjustment,
+            'risk_score': agent5_risk_score
         }
     
     def _calculate_levels(
