@@ -1,38 +1,44 @@
-```
-# Python
+```markdown
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Dependencies
+.venv/
+venv/
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
-env/
-venv/
-.venv/
-.ENV
-.ENV.local
-.env
-.env.local
-.env.*
-
-# Logs
-*.log
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*.tmp
 
 # Build artifacts
 dist/
 build/
 *.egg-info/
 
-# Dependencies
-pip-wheel-metadata/
-.coverage
+# Editors
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
 htmlcov/
+.coverage
+
+# Python cache
 .mypy_cache/
 .pytest_cache/
+
+# Original rules preserved
+*.log
 ```
