@@ -7,11 +7,9 @@ Central configuration for tokens, risk parameters, symbols, and system settings.
 TELEGRAM_BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
 TELEGRAM_CHAT_ID = "YOUR_TELEGRAM_CHAT_ID"
 
-# MetaTrader 5 Configuration
-MT5_LOGIN = 12345678  # Your MT5 account number
-MT5_PASSWORD = "your_password"
-MT5_SERVER = "YourBroker-Server"
-MT5_PATH = None  # Default MT5 path, set if needed
+# Data Source Configuration
+# Options: 'binance', 'yfinance', 'auto' (auto tries binance first, falls back to yfinance)
+DATA_SOURCE = 'auto'
 
 # Trading Symbols
 SYMBOLS = ["EURUSD", "GBPUSD", "USDJPY", "BTCUSD", "ETHUSD"]
