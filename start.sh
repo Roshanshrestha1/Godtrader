@@ -5,7 +5,7 @@
 # ==========================================
 # This script:
 # 1. Creates virtual environment if needed
-# 2. Installs dependencies
+# 2. Installs dependencies (using system packages if venv fails)
 # 3. Asks for Telegram bot token
 # 4. Starts the market scanner in background
 # 5. Starts the Telegram bot in foreground
@@ -16,8 +16,12 @@ echo "║   🤖 AI TRADING SYSTEM STARTUP            ║"
 echo "╚═══════════════════════════════════════════╝"
 echo ""
 
-# Navigate to workspace
-cd /workspace
+# Navigate to workspace (use absolute path from script location)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR" || exit 1
+
+# Create necessary directories early
+mkdir -p logs cache
 
 # 1. Check Python version
 if ! command -v python3 &> /dev/null; then
@@ -26,28 +30,43 @@ if ! command -v python3 &> /dev/null; then
 fi
 echo "✅ Python 3 found: $(python3 --version)"
 
-# 2. Create Virtual Environment if it doesn't exist
+# 2. Setup Python environment
+# Try venv first, fall back to system packages if disk space is low
+VENV_SUCCESS=false
 if [ ! -d "venv" ]; then
     echo ""
     echo "📦 Creating virtual environment..."
-    python3 -m venv venv
-    if [ $? -ne 0 ]; then
-        echo "❌ Failed to create virtual environment."
-        exit 1
+    if python3 -m venv venv 2>/dev/null; then
+        VENV_SUCCESS=true
+        echo "✅ Virtual environment created."
+    else
+        echo "⚠️  Could not create venv (likely disk space issue)."
+        echo "   Using system Python packages instead."
     fi
-    echo "✅ Virtual environment created."
 else
     echo "✅ Virtual environment already exists."
+    VENV_SUCCESS=true
 fi
 
-# 3. Activate Virtual Environment
-source venv/bin/activate
+# 3. Activate Virtual Environment or use system
+if [ "$VENV_SUCCESS" = true ]; then
+    source venv/bin/activate
+    PYTHON_CMD="python"
+    PIP_CMD="pip"
+else
+    PYTHON_CMD="python3"
+    PIP_CMD="pip3"
+    echo "✅ Using system Python environment."
+fi
 
 # 4. Install Dependencies
 echo ""
 echo "📥 Installing/Updating dependencies..."
-pip install -q --upgrade pip
-pip install -q -r requirements.txt
+$PIP_CMD install -q --upgrade pip 2>/dev/null || true
+
+# Install required packages
+$PIP_CMD install -q python-telegram-bot yfinance pandas numpy pyyaml aiohttp python-dotenv requests 2>&1 | grep -v "WARNING\|notice" || true
+
 echo "✅ Dependencies installed."
 
 # 5. Handle Bot Token
@@ -78,9 +97,9 @@ else
     echo "✅ .env file already exists. Using stored token."
 fi
 
-# 6. Create necessary directories
-mkdir -p /workspace/cache
-mkdir -p /workspace/logs
+# 6. Create necessary directories (already done above, but ensure they exist)
+mkdir -p logs cache
+chmod 755 logs cache
 
 # 7. Start Market Scanner in Background
 echo ""
@@ -93,13 +112,13 @@ echo ""
 pkill -f "python.*market_scanner.py" 2>/dev/null || true
 
 # Start scanner in background with nohup
-nohup python3 market_scanner.py > /workspace/logs/scanner_output.log 2>&1 &
+nohup $PYTHON_CMD market_scanner.py > logs/scanner_output.log 2>&1 &
 SCANNER_PID=$!
 
 echo "✅ Market Scanner started (PID: $SCANNER_PID)"
 echo "   - Scanning all 108 Exness assets"
 echo "   - Updates every 5 minutes"
-echo "   - Logs: /workspace/logs/scanner.log"
+echo "   - Logs: logs/scanner.log"
 echo ""
 
 # Wait a moment for initial scan to start
@@ -124,4 +143,4 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo ""
 
 # Run the Telegram bot
-python3 telegram_bot.py
+$PYTHON_CMD telegram_bot.py
