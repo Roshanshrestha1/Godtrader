@@ -20,7 +20,7 @@ class TrendAgent:
     - Output: BUY/SELL/HOLD with confidence score
     """
     
-    def __init__(self, ema_period: int = 200, adx_period: int = 14, adx_threshold: int = 25):
+    def __init__(self, ema_period: int = 200, adx_period: int = 14, adx_threshold: int = 18):
         self.ema_period = ema_period
         self.adx_period = adx_period
         self.adx_threshold = adx_threshold

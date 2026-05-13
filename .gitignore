@@ -3,11 +3,10 @@
 *.pyc
 __pycache__/
 
-# Environment files
-.env
-.env.local
-*.env.*
-
-# Log files
+# Logs
 *.log
+logs/
+
+# Cache
+cache/
 ```

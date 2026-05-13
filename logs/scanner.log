@@ -1,0 +1,1393 @@
+nohup: ignoring input
+OpenBLAS WARNING - could not determine the L2 cache size on this system, assuming 256k
+2026-05-13 08:43:49,541 - MarketScanner - INFO - 🚀 Market Scanner started | Scan interval: 5 minutes
+2026-05-13 08:43:49,542 - MarketScanner - INFO - 🔍 Starting COMPREHENSIVE market scan...
+2026-05-13 08:43:49,542 - MarketScanner - INFO - 📊 Scanning 108 symbols across all asset classes
+2026-05-13 08:43:49,542 - MarketScanner - INFO - 🚀 Using parallel processing (max 10 concurrent)
+2026-05-13 08:43:49,543 - master_brain - INFO - Analyzing EURUSD=X on 1h timeframe
+2026-05-13 08:43:49,543 - utils.data_fetcher - INFO - Fetching data for EURUSD=X (EURUSD=X) on 1h timeframe
+2026-05-13 08:43:49,555 - master_brain - INFO - Analyzing GBPUSD=X on 1h timeframe
+2026-05-13 08:43:49,556 - utils.data_fetcher - INFO - Fetching data for GBPUSD=X (GBPUSD=X) on 1h timeframe
+2026-05-13 08:43:49,558 - master_brain - INFO - Analyzing USDJPY=X on 1h timeframe
+2026-05-13 08:43:49,558 - utils.data_fetcher - INFO - Fetching data for USDJPY=X (USDJPY=X) on 1h timeframe
+2026-05-13 08:43:49,559 - master_brain - INFO - Analyzing USDCHF=X on 1h timeframe
+2026-05-13 08:43:49,560 - master_brain - INFO - Analyzing AUDUSD=X on 1h timeframe
+2026-05-13 08:43:49,561 - utils.data_fetcher - INFO - Fetching data for USDCHF=X (USDCHF=X) on 1h timeframe
+2026-05-13 08:43:49,561 - master_brain - INFO - Analyzing USDCAD=X on 1h timeframe
+2026-05-13 08:43:49,577 - utils.data_fetcher - INFO - Fetching data for USDCAD=X (USDCAD=X) on 1h timeframe
+2026-05-13 08:43:49,575 - utils.data_fetcher - INFO - Fetching data for AUDUSD=X (AUDUSD=X) on 1h timeframe
+2026-05-13 08:43:49,621 - utils.data_fetcher - INFO - Successfully fetched 122 candles for EURUSD=X
+2026-05-13 08:43:49,622 - utils.data_fetcher - INFO - Successfully fetched 122 candles for GBPUSD=X
+2026-05-13 08:43:49,638 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDJPY=X
+2026-05-13 08:43:49,641 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDCHF=X
+2026-05-13 08:43:49,643 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDCAD=X
+2026-05-13 08:43:49,656 - utils.data_fetcher - INFO - Successfully fetched 122 candles for AUDUSD=X
+2026-05-13 08:43:51,621 - utils.data_fetcher - INFO - Fetching data for EURUSD=X (EURUSD=X) on 4h timeframe
+2026-05-13 08:43:51,637 - utils.data_fetcher - INFO - Fetching data for GBPUSD=X (GBPUSD=X) on 4h timeframe
+2026-05-13 08:43:51,640 - utils.data_fetcher - INFO - Fetching data for USDJPY=X (USDJPY=X) on 4h timeframe
+2026-05-13 08:43:51,642 - utils.data_fetcher - INFO - Fetching data for USDCHF=X (USDCHF=X) on 4h timeframe
+2026-05-13 08:43:51,644 - utils.data_fetcher - INFO - Fetching data for USDCAD=X (USDCAD=X) on 4h timeframe
+2026-05-13 08:43:51,657 - utils.data_fetcher - INFO - Fetching data for AUDUSD=X (AUDUSD=X) on 4h timeframe
+2026-05-13 08:43:51,677 - utils.data_fetcher - INFO - Successfully fetched 134 candles for EURUSD=X
+2026-05-13 08:43:51,699 - utils.data_fetcher - INFO - Successfully fetched 134 candles for GBPUSD=X
+2026-05-13 08:43:51,718 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDJPY=X
+2026-05-13 08:43:51,720 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDCAD=X
+2026-05-13 08:43:51,723 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDCHF=X
+2026-05-13 08:43:51,757 - utils.data_fetcher - INFO - Successfully fetched 134 candles for AUDUSD=X
+2026-05-13 08:43:52,138 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:52,157 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:52,162 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:52,162 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:52,179 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:52,179 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:52,205 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:52,205 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:43:52,205 - master_brain - INFO - agent4: BUY (54%)
+2026-05-13 08:43:52,205 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:52,205 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:43:52,205 - master_brain - INFO - Analysis complete for EURUSD=X: HOLD (54%)
+2026-05-13 08:43:52,205 - master_brain - INFO - Analyzing NZDUSD=X on 1h timeframe
+2026-05-13 08:43:52,205 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:52,205 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:43:52,206 - master_brain - INFO - agent4: SELL (15%)
+2026-05-13 08:43:52,206 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:52,215 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:43:52,215 - master_brain - INFO - Analysis complete for USDCAD=X: HOLD (15%)
+2026-05-13 08:43:52,215 - master_brain - INFO - Analyzing EURGBP=X on 1h timeframe
+2026-05-13 08:43:52,201 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:52,216 - master_brain - INFO - agent3: SELL (45%)
+2026-05-13 08:43:52,196 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:52,216 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:52,216 - master_brain - INFO - agent4: BUY (23%)
+2026-05-13 08:43:52,216 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:52,216 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:52,201 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:52,216 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:43:52,205 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:52,217 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:43:52,217 - master_brain - INFO - Analysis complete for AUDUSD=X: HOLD (34%)
+2026-05-13 08:43:52,217 - master_brain - INFO - Analyzing EURJPY=X on 1h timeframe
+2026-05-13 08:43:52,217 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:52,217 - master_brain - INFO - agent4: BUY (30%)
+2026-05-13 08:43:52,217 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:52,218 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:43:52,218 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:52,217 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:52,218 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:52,218 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:43:52,218 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:43:52,218 - master_brain - INFO - agent4: SELL (28%)
+2026-05-13 08:43:52,218 - master_brain - INFO - Analysis complete for USDCHF=X: HOLD (30%)
+2026-05-13 08:43:52,218 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:52,218 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:43:52,218 - master_brain - INFO - Analysis complete for USDJPY=X: HOLD (28%)
+2026-05-13 08:43:52,219 - master_brain - INFO - Analyzing GBPJPY=X on 1h timeframe
+2026-05-13 08:43:52,218 - master_brain - INFO - agent4: BUY (15%)
+2026-05-13 08:43:52,219 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:52,219 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:43:52,219 - master_brain - INFO - Analysis complete for GBPUSD=X: HOLD (15%)
+2026-05-13 08:43:52,219 - master_brain - INFO - Analyzing EURCHF=X on 1h timeframe
+2026-05-13 08:43:52,219 - master_brain - INFO - Analyzing EURAUD=X on 1h timeframe
+2026-05-13 08:43:53,759 - utils.data_fetcher - INFO - Fetching data for EURCHF=X (EURCHF=X) on 1h timeframe
+2026-05-13 08:43:53,759 - utils.data_fetcher - INFO - Fetching data for GBPJPY=X (GBPJPY=X) on 1h timeframe
+2026-05-13 08:43:53,759 - utils.data_fetcher - INFO - Fetching data for EURAUD=X (EURAUD=X) on 1h timeframe
+2026-05-13 08:43:53,759 - utils.data_fetcher - INFO - Fetching data for NZDUSD=X (NZDUSD=X) on 1h timeframe
+2026-05-13 08:43:53,759 - utils.data_fetcher - INFO - Fetching data for EURGBP=X (EURGBP=X) on 1h timeframe
+2026-05-13 08:43:53,759 - utils.data_fetcher - INFO - Fetching data for EURJPY=X (EURJPY=X) on 1h timeframe
+2026-05-13 08:43:53,799 - utils.data_fetcher - INFO - Successfully fetched 122 candles for EURJPY=X
+2026-05-13 08:43:53,801 - utils.data_fetcher - INFO - Successfully fetched 122 candles for NZDUSD=X
+2026-05-13 08:43:53,818 - utils.data_fetcher - INFO - Successfully fetched 122 candles for GBPJPY=X
+2026-05-13 08:43:53,820 - utils.data_fetcher - INFO - Successfully fetched 122 candles for EURGBP=X
+2026-05-13 08:43:53,821 - utils.data_fetcher - INFO - Successfully fetched 122 candles for EURAUD=X
+2026-05-13 08:43:53,816 - utils.data_fetcher - INFO - Successfully fetched 122 candles for EURCHF=X
+2026-05-13 08:43:55,822 - utils.data_fetcher - INFO - Fetching data for EURJPY=X (EURJPY=X) on 4h timeframe
+2026-05-13 08:43:55,823 - utils.data_fetcher - INFO - Fetching data for NZDUSD=X (NZDUSD=X) on 4h timeframe
+2026-05-13 08:43:55,824 - utils.data_fetcher - INFO - Fetching data for GBPJPY=X (GBPJPY=X) on 4h timeframe
+2026-05-13 08:43:55,824 - utils.data_fetcher - INFO - Fetching data for EURGBP=X (EURGBP=X) on 4h timeframe
+2026-05-13 08:43:55,825 - utils.data_fetcher - INFO - Fetching data for EURAUD=X (EURAUD=X) on 4h timeframe
+2026-05-13 08:43:55,826 - utils.data_fetcher - INFO - Fetching data for EURCHF=X (EURCHF=X) on 4h timeframe
+2026-05-13 08:43:55,860 - utils.data_fetcher - INFO - Successfully fetched 134 candles for EURAUD=X
+2026-05-13 08:43:55,862 - utils.data_fetcher - INFO - Successfully fetched 134 candles for EURJPY=X
+2026-05-13 08:43:55,880 - utils.data_fetcher - INFO - Successfully fetched 134 candles for NZDUSD=X
+2026-05-13 08:43:55,898 - utils.data_fetcher - INFO - Successfully fetched 134 candles for EURGBP=X
+2026-05-13 08:43:55,940 - utils.data_fetcher - INFO - Successfully fetched 134 candles for EURCHF=X
+2026-05-13 08:43:55,963 - utils.data_fetcher - INFO - Successfully fetched 134 candles for GBPJPY=X
+2026-05-13 08:43:56,278 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:56,279 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:56,279 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:56,279 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:43:56,279 - master_brain - INFO - agent4: BUY (49%)
+2026-05-13 08:43:56,279 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:56,279 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:43:56,279 - master_brain - INFO - Analysis complete for EURAUD=X: HOLD (49%)
+2026-05-13 08:43:56,282 - master_brain - INFO - Analyzing EURCAD=X on 1h timeframe
+2026-05-13 08:43:56,285 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:56,300 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:56,301 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:56,303 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:56,303 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:56,302 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:56,303 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:56,316 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:43:56,316 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:43:56,316 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:56,316 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent4: BUY (48%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent4: SELL (30%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent4: SELL (30%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:56,318 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:56,318 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:56,318 - master_brain - INFO - agent4: BUY (49%)
+2026-05-13 08:43:56,317 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:43:56,318 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:43:56,318 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:43:56,318 - master_brain - INFO - agent4: BUY (15%)
+2026-05-13 08:43:56,318 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:56,318 - master_brain - INFO - Analysis complete for EURJPY=X: HOLD (48%)
+2026-05-13 08:43:56,319 - master_brain - INFO - Analysis complete for NZDUSD=X: HOLD (30%)
+2026-05-13 08:43:56,320 - master_brain - INFO - Analyzing AUDCAD=X on 1h timeframe
+2026-05-13 08:43:56,320 - master_brain - INFO - Analyzing AUDJPY=X on 1h timeframe
+2026-05-13 08:43:56,318 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:43:56,321 - master_brain - INFO - Analysis complete for EURCHF=X: HOLD (30%)
+2026-05-13 08:43:56,321 - master_brain - INFO - Analyzing CADJPY=X on 1h timeframe
+2026-05-13 08:43:56,320 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:43:56,329 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:43:56,329 - master_brain - INFO - Analysis complete for GBPJPY=X: HOLD (15%)
+2026-05-13 08:43:56,330 - master_brain - INFO - Analyzing CHFJPY=X on 1h timeframe
+2026-05-13 08:43:56,320 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:43:56,336 - master_brain - INFO - Analysis complete for EURGBP=X: HOLD (49%)
+2026-05-13 08:43:56,337 - master_brain - INFO - Analyzing NZDJPY=X on 1h timeframe
+2026-05-13 08:43:57,963 - utils.data_fetcher - INFO - Fetching data for EURCAD=X (EURCAD=X) on 1h timeframe
+2026-05-13 08:43:57,963 - utils.data_fetcher - INFO - Fetching data for AUDJPY=X (AUDJPY=X) on 1h timeframe
+2026-05-13 08:43:57,964 - utils.data_fetcher - INFO - Fetching data for CADJPY=X (CADJPY=X) on 1h timeframe
+2026-05-13 08:43:57,964 - utils.data_fetcher - INFO - Fetching data for AUDCAD=X (AUDCAD=X) on 1h timeframe
+2026-05-13 08:43:57,964 - utils.data_fetcher - INFO - Fetching data for NZDJPY=X (NZDJPY=X) on 1h timeframe
+2026-05-13 08:43:57,964 - utils.data_fetcher - INFO - Fetching data for CHFJPY=X (CHFJPY=X) on 1h timeframe
+2026-05-13 08:43:57,999 - utils.data_fetcher - INFO - Successfully fetched 122 candles for NZDJPY=X
+2026-05-13 08:43:58,001 - utils.data_fetcher - INFO - Successfully fetched 122 candles for CHFJPY=X
+2026-05-13 08:43:58,003 - utils.data_fetcher - INFO - Successfully fetched 122 candles for AUDJPY=X
+2026-05-13 08:43:58,015 - utils.data_fetcher - INFO - Successfully fetched 122 candles for CADJPY=X
+2026-05-13 08:43:58,024 - utils.data_fetcher - INFO - Successfully fetched 122 candles for EURCAD=X
+2026-05-13 08:43:58,029 - utils.data_fetcher - INFO - Successfully fetched 122 candles for AUDCAD=X
+2026-05-13 08:44:00,000 - utils.data_fetcher - INFO - Fetching data for NZDJPY=X (NZDJPY=X) on 4h timeframe
+2026-05-13 08:44:00,001 - utils.data_fetcher - INFO - Fetching data for CHFJPY=X (CHFJPY=X) on 4h timeframe
+2026-05-13 08:44:00,003 - utils.data_fetcher - INFO - Fetching data for AUDJPY=X (AUDJPY=X) on 4h timeframe
+2026-05-13 08:44:00,016 - utils.data_fetcher - INFO - Fetching data for CADJPY=X (CADJPY=X) on 4h timeframe
+2026-05-13 08:44:00,024 - utils.data_fetcher - INFO - Fetching data for EURCAD=X (EURCAD=X) on 4h timeframe
+2026-05-13 08:44:00,029 - utils.data_fetcher - INFO - Fetching data for AUDCAD=X (AUDCAD=X) on 4h timeframe
+2026-05-13 08:44:00,040 - utils.data_fetcher - INFO - Successfully fetched 134 candles for NZDJPY=X
+2026-05-13 08:44:00,058 - utils.data_fetcher - INFO - Successfully fetched 134 candles for CADJPY=X
+2026-05-13 08:44:00,060 - utils.data_fetcher - INFO - Successfully fetched 134 candles for CHFJPY=X
+2026-05-13 08:44:00,097 - utils.data_fetcher - INFO - Successfully fetched 134 candles for AUDJPY=X
+2026-05-13 08:44:00,121 - utils.data_fetcher - INFO - Successfully fetched 134 candles for EURCAD=X
+2026-05-13 08:44:00,202 - utils.data_fetcher - INFO - Successfully fetched 134 candles for AUDCAD=X
+2026-05-13 08:44:00,418 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:00,418 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:00,418 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:00,418 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:00,418 - master_brain - INFO - agent4: SELL (30%)
+2026-05-13 08:44:00,418 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:00,418 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:00,418 - master_brain - INFO - Analysis complete for NZDJPY=X: HOLD (30%)
+2026-05-13 08:44:00,444 - master_brain - INFO - Analyzing GBPAUD=X on 1h timeframe
+2026-05-13 08:44:00,519 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:00,539 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:00,541 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:00,557 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:00,559 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:00,561 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:00,561 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:00,561 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:00,561 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:00,561 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:00,561 - master_brain - INFO - agent4: BUY (30%)
+2026-05-13 08:44:00,562 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:00,561 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:00,561 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:00,562 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:00,562 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:00,562 - master_brain - INFO - Analysis complete for AUDCAD=X: HOLD (30%)
+2026-05-13 08:44:00,562 - master_brain - INFO - agent3: BUY (45%)
+2026-05-13 08:44:00,562 - master_brain - INFO - agent4: SELL (35%)
+2026-05-13 08:44:00,562 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:00,563 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:00,563 - master_brain - INFO - Analysis complete for CADJPY=X: HOLD (40%)
+2026-05-13 08:44:00,563 - master_brain - INFO - Analyzing GBPCAD=X on 1h timeframe
+2026-05-13 08:44:00,561 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:00,563 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:00,563 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:00,563 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:00,563 - master_brain - INFO - agent4: BUY (52%)
+2026-05-13 08:44:00,563 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:00,563 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:00,563 - master_brain - INFO - Analysis complete for EURCAD=X: HOLD (52%)
+2026-05-13 08:44:00,563 - master_brain - INFO - Analyzing GBPCHF=X on 1h timeframe
+2026-05-13 08:44:00,562 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:00,563 - master_brain - INFO - agent4: BUY (30%)
+2026-05-13 08:44:00,564 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:00,564 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:00,564 - master_brain - INFO - Analysis complete for AUDJPY=X: HOLD (30%)
+2026-05-13 08:44:00,564 - master_brain - INFO - Analyzing GBPNZD=X on 1h timeframe
+2026-05-13 08:44:00,562 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:00,564 - master_brain - INFO - agent4: SELL (30%)
+2026-05-13 08:44:00,564 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:00,564 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:00,564 - master_brain - INFO - Analysis complete for CHFJPY=X: HOLD (30%)
+2026-05-13 08:44:00,564 - master_brain - INFO - Analyzing AUDNZD=X on 1h timeframe
+2026-05-13 08:44:00,576 - master_brain - INFO - Analyzing CADCHF=X on 1h timeframe
+2026-05-13 08:44:02,237 - utils.data_fetcher - INFO - Fetching data for AUDNZD=X (AUDNZD=X) on 1h timeframe
+2026-05-13 08:44:02,237 - utils.data_fetcher - INFO - Fetching data for GBPNZD=X (GBPNZD=X) on 1h timeframe
+2026-05-13 08:44:02,237 - utils.data_fetcher - INFO - Fetching data for CADCHF=X (CADCHF=X) on 1h timeframe
+2026-05-13 08:44:02,237 - utils.data_fetcher - INFO - Fetching data for GBPAUD=X (GBPAUD=X) on 1h timeframe
+2026-05-13 08:44:02,238 - utils.data_fetcher - INFO - Fetching data for GBPCAD=X (GBPCAD=X) on 1h timeframe
+2026-05-13 08:44:02,239 - utils.data_fetcher - INFO - Fetching data for GBPCHF=X (GBPCHF=X) on 1h timeframe
+2026-05-13 08:44:02,300 - utils.data_fetcher - INFO - Successfully fetched 122 candles for GBPNZD=X
+2026-05-13 08:44:02,319 - utils.data_fetcher - INFO - Successfully fetched 122 candles for GBPCHF=X
+2026-05-13 08:44:02,322 - utils.data_fetcher - INFO - Successfully fetched 122 candles for CADCHF=X
+2026-05-13 08:44:02,323 - utils.data_fetcher - INFO - Successfully fetched 122 candles for GBPCAD=X
+2026-05-13 08:44:02,326 - utils.data_fetcher - INFO - Successfully fetched 122 candles for AUDNZD=X
+2026-05-13 08:44:02,348 - utils.data_fetcher - INFO - Successfully fetched 122 candles for GBPAUD=X
+2026-05-13 08:44:04,301 - utils.data_fetcher - INFO - Fetching data for GBPNZD=X (GBPNZD=X) on 4h timeframe
+2026-05-13 08:44:04,326 - utils.data_fetcher - INFO - Fetching data for GBPCHF=X (GBPCHF=X) on 4h timeframe
+2026-05-13 08:44:04,326 - utils.data_fetcher - INFO - Fetching data for CADCHF=X (CADCHF=X) on 4h timeframe
+2026-05-13 08:44:04,328 - utils.data_fetcher - INFO - Fetching data for GBPCAD=X (GBPCAD=X) on 4h timeframe
+2026-05-13 08:44:04,336 - utils.data_fetcher - INFO - Fetching data for AUDNZD=X (AUDNZD=X) on 4h timeframe
+2026-05-13 08:44:04,343 - utils.data_fetcher - INFO - Successfully fetched 134 candles for GBPNZD=X
+2026-05-13 08:44:04,356 - utils.data_fetcher - INFO - Fetching data for GBPAUD=X (GBPAUD=X) on 4h timeframe
+2026-05-13 08:44:04,500 - utils.data_fetcher - INFO - Successfully fetched 134 candles for GBPCAD=X
+2026-05-13 08:44:04,517 - utils.data_fetcher - INFO - Successfully fetched 134 candles for CADCHF=X
+2026-05-13 08:44:04,523 - utils.data_fetcher - INFO - Successfully fetched 134 candles for AUDNZD=X
+2026-05-13 08:44:04,558 - utils.data_fetcher - INFO - Successfully fetched 134 candles for GBPCHF=X
+2026-05-13 08:44:04,717 - utils.data_fetcher - INFO - Successfully fetched 134 candles for GBPAUD=X
+2026-05-13 08:44:04,718 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:04,796 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:04,804 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:04,805 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:04,805 - master_brain - INFO - agent4: BUY (30%)
+2026-05-13 08:44:04,805 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:04,805 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:04,805 - master_brain - INFO - Analysis complete for GBPNZD=X: HOLD (30%)
+2026-05-13 08:44:04,805 - master_brain - INFO - Analyzing EURNZD=X on 1h timeframe
+2026-05-13 08:44:04,819 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:04,823 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:04,823 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:04,823 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:04,823 - master_brain - INFO - agent4: SELL (51%)
+2026-05-13 08:44:04,823 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:04,823 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:04,823 - master_brain - INFO - Analysis complete for AUDNZD=X: HOLD (51%)
+2026-05-13 08:44:04,856 - master_brain - INFO - Analyzing NZDCAD=X on 1h timeframe
+2026-05-13 08:44:04,825 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:04,876 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:04,876 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:04,878 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:04,882 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:04,883 - master_brain - INFO - agent4: BUY (35%)
+2026-05-13 08:44:04,883 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:04,883 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:04,885 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:04,885 - master_brain - INFO - Analysis complete for GBPCHF=X: HOLD (35%)
+2026-05-13 08:44:04,885 - master_brain - INFO - Analyzing NZDCHF=X on 1h timeframe
+2026-05-13 08:44:04,883 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:04,885 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:04,885 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:04,885 - master_brain - INFO - agent3: BUY (45%)
+2026-05-13 08:44:04,885 - master_brain - INFO - agent4: BUY (35%)
+2026-05-13 08:44:04,885 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:04,885 - master_brain - INFO - REASON FOR HOLD: Only 2 BUY votes. Need 3.
+2026-05-13 08:44:04,885 - master_brain - INFO - Analysis complete for CADCHF=X: HOLD (40%)
+2026-05-13 08:44:04,884 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:04,896 - master_brain - INFO - Analyzing USDZAR=X on 1h timeframe
+2026-05-13 08:44:04,896 - master_brain - INFO - agent3: SELL (45%)
+2026-05-13 08:44:04,937 - master_brain - INFO - agent4: BUY (15%)
+2026-05-13 08:44:04,937 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:04,937 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:04,937 - master_brain - INFO - Analysis complete for GBPCAD=X: HOLD (30%)
+2026-05-13 08:44:04,938 - master_brain - INFO - Analyzing USDMXN=X on 1h timeframe
+2026-05-13 08:44:04,937 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:04,938 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:04,938 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:04,938 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:04,938 - master_brain - INFO - agent4: BUY (28%)
+2026-05-13 08:44:04,938 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:04,938 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:04,938 - master_brain - INFO - Analysis complete for GBPAUD=X: HOLD (28%)
+2026-05-13 08:44:04,939 - master_brain - INFO - Analyzing USDTRY=X on 1h timeframe
+2026-05-13 08:44:06,743 - utils.data_fetcher - INFO - Fetching data for USDTRY=X (USDTRY=X) on 1h timeframe
+2026-05-13 08:44:06,743 - utils.data_fetcher - INFO - Fetching data for USDMXN=X (USDMXN=X) on 1h timeframe
+2026-05-13 08:44:06,744 - utils.data_fetcher - INFO - Fetching data for USDZAR=X (USDZAR=X) on 1h timeframe
+2026-05-13 08:44:06,745 - utils.data_fetcher - INFO - Fetching data for NZDCAD=X (NZDCAD=X) on 1h timeframe
+2026-05-13 08:44:06,745 - utils.data_fetcher - INFO - Fetching data for EURNZD=X (EURNZD=X) on 1h timeframe
+2026-05-13 08:44:06,745 - utils.data_fetcher - INFO - Fetching data for NZDCHF=X (NZDCHF=X) on 1h timeframe
+2026-05-13 08:44:06,799 - utils.data_fetcher - INFO - Successfully fetched 122 candles for NZDCHF=X
+2026-05-13 08:44:06,802 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDMXN=X
+2026-05-13 08:44:06,804 - utils.data_fetcher - INFO - Successfully fetched 122 candles for EURNZD=X
+2026-05-13 08:44:06,818 - utils.data_fetcher - INFO - Successfully fetched 122 candles for NZDCAD=X
+2026-05-13 08:44:06,820 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDZAR=X
+2026-05-13 08:44:06,822 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDTRY=X
+2026-05-13 08:44:08,803 - utils.data_fetcher - INFO - Fetching data for NZDCHF=X (NZDCHF=X) on 4h timeframe
+2026-05-13 08:44:08,803 - utils.data_fetcher - INFO - Fetching data for USDMXN=X (USDMXN=X) on 4h timeframe
+2026-05-13 08:44:08,805 - utils.data_fetcher - INFO - Fetching data for EURNZD=X (EURNZD=X) on 4h timeframe
+2026-05-13 08:44:08,819 - utils.data_fetcher - INFO - Fetching data for NZDCAD=X (NZDCAD=X) on 4h timeframe
+2026-05-13 08:44:08,821 - utils.data_fetcher - INFO - Fetching data for USDZAR=X (USDZAR=X) on 4h timeframe
+2026-05-13 08:44:08,823 - utils.data_fetcher - INFO - Fetching data for USDTRY=X (USDTRY=X) on 4h timeframe
+2026-05-13 08:44:08,842 - utils.data_fetcher - INFO - Successfully fetched 134 candles for EURNZD=X
+2026-05-13 08:44:08,878 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDMXN=X
+2026-05-13 08:44:08,919 - utils.data_fetcher - INFO - Successfully fetched 134 candles for NZDCAD=X
+2026-05-13 08:44:08,937 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDZAR=X
+2026-05-13 08:44:08,941 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDTRY=X
+2026-05-13 08:44:08,977 - utils.data_fetcher - INFO - Successfully fetched 134 candles for NZDCHF=X
+2026-05-13 08:44:09,159 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:09,160 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:09,160 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:09,160 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:09,160 - master_brain - INFO - agent4: BUY (23%)
+2026-05-13 08:44:09,160 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:09,160 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:09,160 - master_brain - INFO - Analysis complete for EURNZD=X: HOLD (23%)
+2026-05-13 08:44:09,215 - master_brain - INFO - Analyzing USDSGD=X on 1h timeframe
+2026-05-13 08:44:09,244 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:09,261 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:09,277 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:09,300 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:09,301 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:09,301 - master_brain - INFO - agent4: SELL (30%)
+2026-05-13 08:44:09,301 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:09,301 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:09,301 - master_brain - INFO - Analysis complete for USDZAR=X: HOLD (30%)
+2026-05-13 08:44:09,300 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:09,317 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:09,317 - master_brain - INFO - Analyzing USDHKD=X on 1h timeframe
+2026-05-13 08:44:09,317 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:09,336 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:09,337 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:09,338 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:09,341 - master_brain - INFO - agent4: SELL (15%)
+2026-05-13 08:44:09,344 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:09,342 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:09,344 - master_brain - INFO - agent4: SELL (30%)
+2026-05-13 08:44:09,344 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:09,344 - master_brain - INFO - Analysis complete for USDMXN=X: HOLD (15%)
+2026-05-13 08:44:09,344 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:09,343 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:09,342 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:09,345 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:09,345 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:09,345 - master_brain - INFO - Analyzing USDNOK=X on 1h timeframe
+2026-05-13 08:44:09,345 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:09,345 - master_brain - INFO - agent4: SELL (30%)
+2026-05-13 08:44:09,345 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:09,345 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:09,345 - master_brain - INFO - Analysis complete for NZDCAD=X: HOLD (30%)
+2026-05-13 08:44:09,345 - master_brain - INFO - Analyzing USDSEK=X on 1h timeframe
+2026-05-13 08:44:09,344 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:09,356 - master_brain - INFO - Analysis complete for NZDCHF=X: HOLD (30%)
+2026-05-13 08:44:09,356 - master_brain - INFO - Analyzing USDDKK=X on 1h timeframe
+2026-05-13 08:44:09,345 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:09,356 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:09,357 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:09,357 - master_brain - INFO - agent4: BUY (30%)
+2026-05-13 08:44:09,357 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:09,357 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:09,357 - master_brain - INFO - Analysis complete for USDTRY=X: HOLD (30%)
+2026-05-13 08:44:09,357 - master_brain - INFO - Analyzing USDPLN=X on 1h timeframe
+2026-05-13 08:44:11,003 - utils.data_fetcher - INFO - Fetching data for USDPLN=X (USDPLN=X) on 1h timeframe
+2026-05-13 08:44:11,004 - utils.data_fetcher - INFO - Fetching data for USDSGD=X (USDSGD=X) on 1h timeframe
+2026-05-13 08:44:11,006 - utils.data_fetcher - INFO - Fetching data for USDDKK=X (USDDKK=X) on 1h timeframe
+2026-05-13 08:44:11,007 - utils.data_fetcher - INFO - Fetching data for USDHKD=X (USDHKD=X) on 1h timeframe
+2026-05-13 08:44:11,008 - utils.data_fetcher - INFO - Fetching data for USDSEK=X (USDSEK=X) on 1h timeframe
+2026-05-13 08:44:11,008 - utils.data_fetcher - INFO - Fetching data for USDNOK=X (USDNOK=X) on 1h timeframe
+2026-05-13 08:44:11,039 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDSEK=X
+2026-05-13 08:44:11,041 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDDKK=X
+2026-05-13 08:44:11,043 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDNOK=X
+2026-05-13 08:44:11,044 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDHKD=X
+2026-05-13 08:44:11,056 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDSGD=X
+2026-05-13 08:44:11,058 - utils.data_fetcher - INFO - Successfully fetched 122 candles for USDPLN=X
+2026-05-13 08:44:13,039 - utils.data_fetcher - INFO - Fetching data for USDSEK=X (USDSEK=X) on 4h timeframe
+2026-05-13 08:44:13,042 - utils.data_fetcher - INFO - Fetching data for USDDKK=X (USDDKK=X) on 4h timeframe
+2026-05-13 08:44:13,043 - utils.data_fetcher - INFO - Fetching data for USDNOK=X (USDNOK=X) on 4h timeframe
+2026-05-13 08:44:13,045 - utils.data_fetcher - INFO - Fetching data for USDHKD=X (USDHKD=X) on 4h timeframe
+2026-05-13 08:44:13,057 - utils.data_fetcher - INFO - Fetching data for USDSGD=X (USDSGD=X) on 4h timeframe
+2026-05-13 08:44:13,063 - utils.data_fetcher - INFO - Fetching data for USDPLN=X (USDPLN=X) on 4h timeframe
+2026-05-13 08:44:13,081 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDNOK=X
+2026-05-13 08:44:13,101 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDDKK=X
+2026-05-13 08:44:13,102 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDHKD=X
+2026-05-13 08:44:13,104 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDSEK=X
+2026-05-13 08:44:13,110 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDSGD=X
+2026-05-13 08:44:13,298 - utils.data_fetcher - INFO - Successfully fetched 134 candles for USDPLN=X
+2026-05-13 08:44:13,464 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:13,495 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:13,495 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:13,495 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:13,495 - master_brain - INFO - agent4: BUY (15%)
+2026-05-13 08:44:13,495 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:13,495 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:13,496 - master_brain - INFO - Analysis complete for USDNOK=X: HOLD (15%)
+2026-05-13 08:44:13,496 - master_brain - INFO - Analyzing BTC-USD on 1h timeframe
+2026-05-13 08:44:13,479 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:13,502 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:13,502 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:13,502 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:13,502 - master_brain - INFO - agent4: BUY (30%)
+2026-05-13 08:44:13,502 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:13,502 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:13,502 - master_brain - INFO - Analysis complete for USDSEK=X: HOLD (30%)
+2026-05-13 08:44:13,502 - master_brain - INFO - Analyzing ETH-USD on 1h timeframe
+2026-05-13 08:44:13,478 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:13,537 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:13,537 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:13,537 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:13,537 - master_brain - INFO - agent4: BUY (35%)
+2026-05-13 08:44:13,538 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:13,538 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:13,538 - master_brain - INFO - Analysis complete for USDHKD=X: HOLD (35%)
+2026-05-13 08:44:13,540 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:13,540 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:13,541 - master_brain - INFO - Analyzing LTC-USD on 1h timeframe
+2026-05-13 08:44:13,541 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:13,564 - master_brain - INFO - agent3: SELL (50%)
+2026-05-13 08:44:13,564 - master_brain - INFO - agent4: SELL (15%)
+2026-05-13 08:44:13,564 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:13,564 - master_brain - INFO - REASON FOR HOLD: Only 2 SELL votes. Need 3.
+2026-05-13 08:44:13,564 - master_brain - INFO - Analysis complete for USDSGD=X: HOLD (32%)
+2026-05-13 08:44:13,564 - master_brain - INFO - Analyzing XRP-USD on 1h timeframe
+2026-05-13 08:44:13,543 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:13,565 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:13,578 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:13,578 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:13,578 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:13,578 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:13,579 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:13,579 - master_brain - INFO - agent4: SELL (54%)
+2026-05-13 08:44:13,579 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:13,579 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:13,579 - master_brain - INFO - agent4: SELL (51%)
+2026-05-13 08:44:13,579 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:13,579 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:13,579 - master_brain - INFO - Analysis complete for USDDKK=X: HOLD (54%)
+2026-05-13 08:44:13,580 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:13,580 - master_brain - INFO - Analysis complete for USDPLN=X: HOLD (51%)
+2026-05-13 08:44:13,580 - master_brain - INFO - Analyzing BCH-USD on 1h timeframe
+2026-05-13 08:44:13,580 - master_brain - INFO - Analyzing ADA-USD on 1h timeframe
+2026-05-13 08:44:15,319 - utils.data_fetcher - INFO - Fetching data for ETH-USD (ETH-USD) on 1h timeframe
+2026-05-13 08:44:15,319 - utils.data_fetcher - INFO - Fetching data for ADA-USD (ADA-USD) on 1h timeframe
+2026-05-13 08:44:15,319 - utils.data_fetcher - INFO - Fetching data for BCH-USD (BCH-USD) on 1h timeframe
+2026-05-13 08:44:15,319 - utils.data_fetcher - INFO - Fetching data for XRP-USD (XRP-USD) on 1h timeframe
+2026-05-13 08:44:15,319 - utils.data_fetcher - INFO - Fetching data for BTC-USD (BTC-USD) on 1h timeframe
+2026-05-13 08:44:15,319 - utils.data_fetcher - INFO - Fetching data for LTC-USD (LTC-USD) on 1h timeframe
+2026-05-13 08:44:15,376 - utils.data_fetcher - INFO - Successfully fetched 170 candles for ADA-USD
+2026-05-13 08:44:15,380 - utils.data_fetcher - INFO - Successfully fetched 170 candles for ETH-USD
+2026-05-13 08:44:15,383 - utils.data_fetcher - INFO - Successfully fetched 170 candles for BCH-USD
+2026-05-13 08:44:15,385 - utils.data_fetcher - INFO - Successfully fetched 170 candles for BTC-USD
+2026-05-13 08:44:15,398 - utils.data_fetcher - INFO - Successfully fetched 170 candles for LTC-USD
+2026-05-13 08:44:15,400 - utils.data_fetcher - INFO - Successfully fetched 170 candles for XRP-USD
+2026-05-13 08:44:17,378 - utils.data_fetcher - INFO - Fetching data for ADA-USD (ADA-USD) on 4h timeframe
+2026-05-13 08:44:17,381 - utils.data_fetcher - INFO - Fetching data for ETH-USD (ETH-USD) on 4h timeframe
+2026-05-13 08:44:17,383 - utils.data_fetcher - INFO - Fetching data for BCH-USD (BCH-USD) on 4h timeframe
+2026-05-13 08:44:17,396 - utils.data_fetcher - INFO - Fetching data for BTC-USD (BTC-USD) on 4h timeframe
+2026-05-13 08:44:17,398 - utils.data_fetcher - INFO - Fetching data for LTC-USD (LTC-USD) on 4h timeframe
+2026-05-13 08:44:17,400 - utils.data_fetcher - INFO - Fetching data for XRP-USD (XRP-USD) on 4h timeframe
+2026-05-13 08:44:17,417 - utils.data_fetcher - INFO - Successfully fetched 182 candles for ETH-USD
+2026-05-13 08:44:17,462 - utils.data_fetcher - INFO - Successfully fetched 182 candles for BCH-USD
+2026-05-13 08:44:17,484 - utils.data_fetcher - INFO - Successfully fetched 182 candles for BTC-USD
+2026-05-13 08:44:17,485 - utils.data_fetcher - INFO - Successfully fetched 182 candles for LTC-USD
+2026-05-13 08:44:17,495 - utils.data_fetcher - INFO - Successfully fetched 182 candles for XRP-USD
+2026-05-13 08:44:17,498 - utils.data_fetcher - INFO - Successfully fetched 182 candles for ADA-USD
+2026-05-13 08:44:17,824 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:17,839 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:17,841 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:17,856 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:17,858 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:17,859 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:17,878 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:17,862 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:17,876 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:17,878 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:17,860 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:17,880 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:17,880 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:17,880 - master_brain - INFO - agent3: BUY (50%)
+2026-05-13 08:44:17,880 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:17,880 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:17,880 - master_brain - INFO - agent4: SELL (43%)
+2026-05-13 08:44:17,880 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:17,880 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:17,880 - master_brain - INFO - agent4: SELL (41%)
+2026-05-13 08:44:17,880 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:17,880 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:17,881 - master_brain - INFO - Analysis complete for XRP-USD: HOLD (43%)
+2026-05-13 08:44:17,881 - master_brain - INFO - Analyzing SOL-USD on 1h timeframe
+2026-05-13 08:44:17,878 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:17,881 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:17,881 - master_brain - INFO - agent4: BUY (30%)
+2026-05-13 08:44:17,881 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:17,881 - master_brain - INFO - agent4: BUY (15%)
+2026-05-13 08:44:17,882 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:17,881 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:17,882 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:17,882 - master_brain - INFO - agent4: BUY (30%)
+2026-05-13 08:44:17,882 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:17,882 - master_brain - INFO - Analysis complete for BCH-USD: HOLD (15%)
+2026-05-13 08:44:17,882 - master_brain - INFO - Analysis complete for ETH-USD: HOLD (45%)
+2026-05-13 08:44:17,882 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:17,882 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:17,880 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:17,883 - master_brain - INFO - Analyzing DOT-USD on 1h timeframe
+2026-05-13 08:44:17,883 - master_brain - INFO - Analyzing DOGE-USD on 1h timeframe
+2026-05-13 08:44:17,883 - master_brain - INFO - Analysis complete for LTC-USD: HOLD (30%)
+2026-05-13 08:44:17,883 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:17,883 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:17,884 - master_brain - INFO - Analyzing AVAX-USD on 1h timeframe
+2026-05-13 08:44:17,884 - master_brain - INFO - Analysis complete for BTC-USD: HOLD (30%)
+2026-05-13 08:44:17,884 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:17,884 - master_brain - INFO - Analyzing MATIC-USD on 1h timeframe
+2026-05-13 08:44:17,885 - master_brain - INFO - agent3: BUY (50%)
+2026-05-13 08:44:17,885 - master_brain - INFO - agent4: HOLD (30%)
+2026-05-13 08:44:17,885 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:17,885 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:17,885 - master_brain - INFO - Analysis complete for ADA-USD: HOLD (50%)
+2026-05-13 08:44:17,885 - master_brain - INFO - Analyzing LINK-USD on 1h timeframe
+2026-05-13 08:44:19,642 - utils.data_fetcher - INFO - Fetching data for AVAX-USD (AVAX-USD) on 1h timeframe
+2026-05-13 08:44:19,642 - utils.data_fetcher - INFO - Fetching data for DOGE-USD (DOGE-USD) on 1h timeframe
+2026-05-13 08:44:19,642 - utils.data_fetcher - INFO - Fetching data for LINK-USD (LINK-USD) on 1h timeframe
+2026-05-13 08:44:19,642 - utils.data_fetcher - INFO - Fetching data for DOT-USD (DOT-USD) on 1h timeframe
+2026-05-13 08:44:19,642 - utils.data_fetcher - INFO - Fetching data for SOL-USD (SOL-USD) on 1h timeframe
+2026-05-13 08:44:19,642 - utils.data_fetcher - INFO - Fetching data for MATIC-USD (MATIC-USD) on 1h timeframe
+2026-05-13 08:44:19,682 - utils.data_fetcher - INFO - Successfully fetched 170 candles for LINK-USD
+2026-05-13 08:44:19,695 - utils.data_fetcher - INFO - Successfully fetched 170 candles for AVAX-USD
+2026-05-13 08:44:19,696 - utils.data_fetcher - ERROR - Failed to fetch data for MATIC-USD: No data available for symbol: MATIC-USD (MATIC-USD)
+2026-05-13 08:44:19,697 - utils.data_fetcher - WARNING - Attempt 1/3 failed: No data available for symbol: MATIC-USD (MATIC-USD). Retrying in 1.0s...
+2026-05-13 08:44:19,699 - utils.data_fetcher - INFO - Successfully fetched 170 candles for DOGE-USD
+2026-05-13 08:44:19,702 - utils.data_fetcher - INFO - Successfully fetched 170 candles for SOL-USD
+2026-05-13 08:44:19,703 - utils.data_fetcher - INFO - Successfully fetched 170 candles for DOT-USD
+2026-05-13 08:44:20,697 - utils.data_fetcher - INFO - Fetching data for MATIC-USD (MATIC-USD) on 1h timeframe
+2026-05-13 08:44:20,738 - utils.data_fetcher - ERROR - Failed to fetch data for MATIC-USD: No data available for symbol: MATIC-USD (MATIC-USD)
+2026-05-13 08:44:20,739 - utils.data_fetcher - WARNING - Attempt 2/3 failed: No data available for symbol: MATIC-USD (MATIC-USD). Retrying in 2.0s...
+2026-05-13 08:44:21,683 - utils.data_fetcher - INFO - Fetching data for LINK-USD (LINK-USD) on 4h timeframe
+2026-05-13 08:44:21,696 - utils.data_fetcher - INFO - Fetching data for AVAX-USD (AVAX-USD) on 4h timeframe
+2026-05-13 08:44:21,699 - utils.data_fetcher - INFO - Fetching data for DOGE-USD (DOGE-USD) on 4h timeframe
+2026-05-13 08:44:21,703 - utils.data_fetcher - INFO - Fetching data for SOL-USD (SOL-USD) on 4h timeframe
+2026-05-13 08:44:21,704 - utils.data_fetcher - INFO - Fetching data for DOT-USD (DOT-USD) on 4h timeframe
+2026-05-13 08:44:21,718 - utils.data_fetcher - INFO - Successfully fetched 182 candles for LINK-USD
+2026-05-13 08:44:21,739 - utils.data_fetcher - INFO - Successfully fetched 182 candles for SOL-USD
+2026-05-13 08:44:21,756 - utils.data_fetcher - INFO - Successfully fetched 182 candles for AVAX-USD
+2026-05-13 08:44:21,798 - utils.data_fetcher - INFO - Successfully fetched 182 candles for DOGE-USD
+2026-05-13 08:44:21,858 - utils.data_fetcher - INFO - Successfully fetched 182 candles for DOT-USD
+2026-05-13 08:44:22,040 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:22,040 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:22,041 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:22,041 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:22,041 - master_brain - INFO - agent4: SELL (45%)
+2026-05-13 08:44:22,041 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:22,041 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:22,041 - master_brain - INFO - Analysis complete for LINK-USD: HOLD (45%)
+2026-05-13 08:44:22,059 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:22,059 - master_brain - INFO - Analyzing UNI-USD on 1h timeframe
+2026-05-13 08:44:22,065 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:22,095 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:22,095 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:22,095 - master_brain - INFO - agent4: SELL (46%)
+2026-05-13 08:44:22,095 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:22,095 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:22,096 - master_brain - INFO - Analysis complete for DOT-USD: HOLD (46%)
+2026-05-13 08:44:22,063 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:22,099 - master_brain - INFO - Analyzing ATOM-USD on 1h timeframe
+2026-05-13 08:44:22,101 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:22,117 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:22,117 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:22,117 - master_brain - INFO - agent4: BUY (30%)
+2026-05-13 08:44:22,117 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:22,118 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:22,118 - master_brain - INFO - Analysis complete for SOL-USD: HOLD (30%)
+2026-05-13 08:44:22,119 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:22,119 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:22,120 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:22,120 - master_brain - INFO - Analyzing XLM-USD on 1h timeframe
+2026-05-13 08:44:22,122 - master_brain - INFO - agent3: BUY (50%)
+2026-05-13 08:44:22,123 - master_brain - INFO - agent4: SELL (45%)
+2026-05-13 08:44:22,123 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:22,123 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:22,123 - master_brain - INFO - Analysis complete for DOGE-USD: HOLD (47%)
+2026-05-13 08:44:22,124 - master_brain - INFO - Analyzing ETC-USD on 1h timeframe
+2026-05-13 08:44:22,141 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:22,141 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:22,141 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:22,141 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:22,141 - master_brain - INFO - agent4: SELL (41%)
+2026-05-13 08:44:22,141 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:22,141 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:22,141 - master_brain - INFO - Analysis complete for AVAX-USD: HOLD (41%)
+2026-05-13 08:44:22,141 - master_brain - INFO - Analyzing FIL-USD on 1h timeframe
+2026-05-13 08:44:22,739 - utils.data_fetcher - INFO - Fetching data for MATIC-USD (MATIC-USD) on 1h timeframe
+2026-05-13 08:44:22,765 - utils.data_fetcher - ERROR - Failed to fetch data for MATIC-USD: No data available for symbol: MATIC-USD (MATIC-USD)
+2026-05-13 08:44:22,766 - utils.data_fetcher - ERROR - All 3 attempts failed: No data available for symbol: MATIC-USD (MATIC-USD)
+2026-05-13 08:44:22,766 - master_brain - ERROR - Analysis failed for MATIC-USD: No data available for symbol: MATIC-USD (MATIC-USD)
+Traceback (most recent call last):
+  File "/workspace/master_brain.py", line 95, in analyze_single
+    df_main = fetch_ohlcv(symbol, interval=tf, period='7d')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/utils/data_fetcher.py", line 95, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/utils/data_fetcher.py", line 130, in wrapper
+    raise last_exception
+  File "/workspace/utils/data_fetcher.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/utils/data_fetcher.py", line 218, in fetch_ohlcv
+    raise ValueError(f"No data available for symbol: {symbol} ({yahoo_symbol})")
+ValueError: No data available for symbol: MATIC-USD (MATIC-USD)
+2026-05-13 08:44:22,767 - master_brain - INFO - Analyzing TRX-USD on 1h timeframe
+2026-05-13 08:44:23,860 - utils.data_fetcher - INFO - Fetching data for FIL-USD (FIL-USD) on 1h timeframe
+2026-05-13 08:44:23,861 - utils.data_fetcher - INFO - Fetching data for ETC-USD (ETC-USD) on 1h timeframe
+2026-05-13 08:44:23,861 - utils.data_fetcher - INFO - Fetching data for TRX-USD (TRX-USD) on 1h timeframe
+2026-05-13 08:44:23,861 - utils.data_fetcher - INFO - Fetching data for XLM-USD (XLM-USD) on 1h timeframe
+2026-05-13 08:44:23,861 - utils.data_fetcher - INFO - Fetching data for UNI-USD (UNI-USD) on 1h timeframe
+2026-05-13 08:44:23,861 - utils.data_fetcher - INFO - Fetching data for ATOM-USD (ATOM-USD) on 1h timeframe
+2026-05-13 08:44:23,901 - utils.data_fetcher - INFO - Successfully fetched 170 candles for ETC-USD
+2026-05-13 08:44:23,903 - utils.data_fetcher - INFO - Successfully fetched 170 candles for TRX-USD
+2026-05-13 08:44:23,915 - utils.data_fetcher - INFO - Successfully fetched 170 candles for FIL-USD
+2026-05-13 08:44:23,920 - utils.data_fetcher - INFO - Successfully fetched 170 candles for XLM-USD
+2026-05-13 08:44:23,921 - utils.data_fetcher - ERROR - Failed to fetch data for UNI-USD: No data available for symbol: UNI-USD (UNI-USD)
+2026-05-13 08:44:23,921 - utils.data_fetcher - WARNING - Attempt 1/3 failed: No data available for symbol: UNI-USD (UNI-USD). Retrying in 1.0s...
+2026-05-13 08:44:23,921 - utils.data_fetcher - INFO - Successfully fetched 170 candles for ATOM-USD
+2026-05-13 08:44:24,921 - utils.data_fetcher - INFO - Fetching data for UNI-USD (UNI-USD) on 1h timeframe
+2026-05-13 08:44:24,951 - utils.data_fetcher - ERROR - Failed to fetch data for UNI-USD: No data available for symbol: UNI-USD (UNI-USD)
+2026-05-13 08:44:24,951 - utils.data_fetcher - WARNING - Attempt 2/3 failed: No data available for symbol: UNI-USD (UNI-USD). Retrying in 2.0s...
+2026-05-13 08:44:25,917 - utils.data_fetcher - INFO - Fetching data for ETC-USD (ETC-USD) on 4h timeframe
+2026-05-13 08:44:25,918 - utils.data_fetcher - INFO - Fetching data for TRX-USD (TRX-USD) on 4h timeframe
+2026-05-13 08:44:25,919 - utils.data_fetcher - INFO - Fetching data for FIL-USD (FIL-USD) on 4h timeframe
+2026-05-13 08:44:25,921 - utils.data_fetcher - INFO - Fetching data for XLM-USD (XLM-USD) on 4h timeframe
+2026-05-13 08:44:25,922 - utils.data_fetcher - INFO - Fetching data for ATOM-USD (ATOM-USD) on 4h timeframe
+2026-05-13 08:44:25,949 - utils.data_fetcher - INFO - Successfully fetched 182 candles for TRX-USD
+2026-05-13 08:44:25,981 - utils.data_fetcher - INFO - Successfully fetched 182 candles for ATOM-USD
+2026-05-13 08:44:25,983 - utils.data_fetcher - INFO - Successfully fetched 182 candles for ETC-USD
+2026-05-13 08:44:25,997 - utils.data_fetcher - INFO - Successfully fetched 182 candles for FIL-USD
+2026-05-13 08:44:26,076 - utils.data_fetcher - INFO - Successfully fetched 182 candles for XLM-USD
+2026-05-13 08:44:26,284 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:26,317 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:26,317 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:26,301 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:26,323 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:26,323 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:26,323 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:26,322 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:26,341 - master_brain - INFO - agent4: SELL (15%)
+2026-05-13 08:44:26,341 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:26,341 - master_brain - INFO - agent4: BUY (15%)
+2026-05-13 08:44:26,341 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:26,341 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:26,343 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:26,342 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:26,343 - master_brain - INFO - Analysis complete for TRX-USD: HOLD (15%)
+2026-05-13 08:44:26,358 - master_brain - INFO - Analyzing EOS-USD on 1h timeframe
+2026-05-13 08:44:26,343 - master_brain - INFO - Analysis complete for ATOM-USD: HOLD (15%)
+2026-05-13 08:44:26,357 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:26,341 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:26,361 - master_brain - INFO - Analyzing AAVE-USD on 1h timeframe
+2026-05-13 08:44:26,363 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:26,363 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:26,363 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:26,363 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:26,363 - master_brain - INFO - agent4: HOLD (30%)
+2026-05-13 08:44:26,363 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:26,363 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:26,364 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:26,364 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:26,364 - master_brain - INFO - agent3: BUY (50%)
+2026-05-13 08:44:26,364 - master_brain - INFO - Analysis complete for FIL-USD: HOLD (0%)
+2026-05-13 08:44:26,364 - master_brain - INFO - Analyzing XMR-USD on 1h timeframe
+2026-05-13 08:44:26,364 - master_brain - INFO - agent4: HOLD (30%)
+2026-05-13 08:44:26,364 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:26,364 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:26,365 - master_brain - INFO - Analysis complete for XLM-USD: HOLD (50%)
+2026-05-13 08:44:26,365 - master_brain - INFO - Analyzing ALGO-USD on 1h timeframe
+2026-05-13 08:44:26,364 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:26,376 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:26,376 - master_brain - INFO - agent4: HOLD (30%)
+2026-05-13 08:44:26,376 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:26,376 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:26,376 - master_brain - INFO - Analysis complete for ETC-USD: HOLD (0%)
+2026-05-13 08:44:26,376 - master_brain - INFO - Analyzing VET-USD on 1h timeframe
+2026-05-13 08:44:26,951 - utils.data_fetcher - INFO - Fetching data for UNI-USD (UNI-USD) on 1h timeframe
+2026-05-13 08:44:26,978 - utils.data_fetcher - ERROR - Failed to fetch data for UNI-USD: No data available for symbol: UNI-USD (UNI-USD)
+2026-05-13 08:44:26,979 - utils.data_fetcher - ERROR - All 3 attempts failed: No data available for symbol: UNI-USD (UNI-USD)
+2026-05-13 08:44:26,979 - master_brain - ERROR - Analysis failed for UNI-USD: No data available for symbol: UNI-USD (UNI-USD)
+Traceback (most recent call last):
+  File "/workspace/master_brain.py", line 95, in analyze_single
+    df_main = fetch_ohlcv(symbol, interval=tf, period='7d')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/utils/data_fetcher.py", line 95, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/utils/data_fetcher.py", line 130, in wrapper
+    raise last_exception
+  File "/workspace/utils/data_fetcher.py", line 117, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/utils/data_fetcher.py", line 218, in fetch_ohlcv
+    raise ValueError(f"No data available for symbol: {symbol} ({yahoo_symbol})")
+ValueError: No data available for symbol: UNI-USD (UNI-USD)
+2026-05-13 08:44:26,980 - master_brain - INFO - Analyzing ICP-USD on 1h timeframe
+2026-05-13 08:44:28,122 - utils.data_fetcher - INFO - Fetching data for AAVE-USD (AAVE-USD) on 1h timeframe
+2026-05-13 08:44:28,122 - utils.data_fetcher - INFO - Fetching data for VET-USD (VET-USD) on 1h timeframe
+2026-05-13 08:44:28,122 - utils.data_fetcher - INFO - Fetching data for EOS-USD (EOS-USD) on 1h timeframe
+2026-05-13 08:44:28,122 - utils.data_fetcher - INFO - Fetching data for ICP-USD (ICP-USD) on 1h timeframe
+2026-05-13 08:44:28,122 - utils.data_fetcher - INFO - Fetching data for ALGO-USD (ALGO-USD) on 1h timeframe
+2026-05-13 08:44:28,122 - utils.data_fetcher - INFO - Fetching data for XMR-USD (XMR-USD) on 1h timeframe
+2026-05-13 08:44:28,179 - utils.data_fetcher - INFO - Successfully fetched 170 candles for XMR-USD
+2026-05-13 08:44:28,181 - utils.data_fetcher - INFO - Successfully fetched 170 candles for VET-USD
+2026-05-13 08:44:28,198 - utils.data_fetcher - INFO - Successfully fetched 170 candles for ALGO-USD
+2026-05-13 08:44:28,200 - utils.data_fetcher - INFO - Successfully fetched 170 candles for AAVE-USD
+2026-05-13 08:44:28,203 - utils.data_fetcher - INFO - Successfully fetched 170 candles for EOS-USD
+2026-05-13 08:44:28,217 - utils.data_fetcher - INFO - Successfully fetched 170 candles for ICP-USD
+2026-05-13 08:44:30,182 - utils.data_fetcher - INFO - Fetching data for VET-USD (VET-USD) on 4h timeframe
+2026-05-13 08:44:30,183 - utils.data_fetcher - INFO - Fetching data for XMR-USD (XMR-USD) on 4h timeframe
+2026-05-13 08:44:30,202 - utils.data_fetcher - INFO - Fetching data for ALGO-USD (ALGO-USD) on 4h timeframe
+2026-05-13 08:44:30,204 - utils.data_fetcher - INFO - Fetching data for AAVE-USD (AAVE-USD) on 4h timeframe
+2026-05-13 08:44:30,205 - utils.data_fetcher - INFO - Fetching data for EOS-USD (EOS-USD) on 4h timeframe
+2026-05-13 08:44:30,213 - utils.data_fetcher - INFO - Successfully fetched 182 candles for VET-USD
+2026-05-13 08:44:30,218 - utils.data_fetcher - INFO - Fetching data for ICP-USD (ICP-USD) on 4h timeframe
+2026-05-13 08:44:30,237 - utils.data_fetcher - INFO - Successfully fetched 182 candles for XMR-USD
+2026-05-13 08:44:30,258 - utils.data_fetcher - INFO - Successfully fetched 182 candles for AAVE-USD
+2026-05-13 08:44:30,296 - utils.data_fetcher - INFO - Successfully fetched 182 candles for ALGO-USD
+2026-05-13 08:44:30,322 - utils.data_fetcher - INFO - Successfully fetched 182 candles for ICP-USD
+2026-05-13 08:44:30,380 - utils.data_fetcher - INFO - Successfully fetched 182 candles for EOS-USD
+2026-05-13 08:44:30,576 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:30,580 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:30,617 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:30,618 - master_brain - INFO - agent3: BUY (45%)
+2026-05-13 08:44:30,618 - master_brain - INFO - agent4: SELL (42%)
+2026-05-13 08:44:30,618 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:30,618 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:30,618 - master_brain - INFO - Analysis complete for AAVE-USD: HOLD (43%)
+2026-05-13 08:44:30,636 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:30,642 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:30,642 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:30,642 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:30,642 - master_brain - INFO - agent4: SELL (44%)
+2026-05-13 08:44:30,642 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:30,642 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:30,642 - master_brain - INFO - Analysis complete for VET-USD: HOLD (44%)
+2026-05-13 08:44:30,643 - master_brain - INFO - Analyzing THETA-USD on 1h timeframe
+2026-05-13 08:44:30,661 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:30,662 - master_brain - INFO - Analyzing GC=F on 1h timeframe
+2026-05-13 08:44:30,676 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:30,698 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:30,701 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:30,701 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:30,699 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:30,701 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:30,701 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:30,704 - master_brain - INFO - agent4: BUY (30%)
+2026-05-13 08:44:30,704 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:30,705 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:30,705 - master_brain - INFO - Analysis complete for EOS-USD: HOLD (30%)
+2026-05-13 08:44:30,705 - master_brain - INFO - Analyzing SI=F on 1h timeframe
+2026-05-13 08:44:30,703 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:30,705 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:30,705 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:30,705 - master_brain - INFO - agent3: SELL (50%)
+2026-05-13 08:44:30,705 - master_brain - INFO - agent4: BUY (15%)
+2026-05-13 08:44:30,705 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:30,705 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:30,705 - master_brain - INFO - Analysis complete for ALGO-USD: HOLD (32%)
+2026-05-13 08:44:30,701 - master_brain - INFO - agent4: BUY (23%)
+2026-05-13 08:44:30,716 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:30,716 - master_brain - INFO - Analyzing PL=F on 1h timeframe
+2026-05-13 08:44:30,716 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:30,717 - master_brain - INFO - Analysis complete for XMR-USD: HOLD (23%)
+2026-05-13 08:44:30,717 - master_brain - INFO - Analyzing PA=F on 1h timeframe
+2026-05-13 08:44:30,704 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:30,717 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:30,717 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:30,717 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:30,717 - master_brain - INFO - agent4: SELL (49%)
+2026-05-13 08:44:30,717 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:30,717 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:30,718 - master_brain - INFO - Analysis complete for ICP-USD: HOLD (49%)
+2026-05-13 08:44:30,718 - master_brain - INFO - Analyzing CL=F on 1h timeframe
+2026-05-13 08:44:32,381 - utils.data_fetcher - INFO - Fetching data for PA=F (PA=F) on 1h timeframe
+2026-05-13 08:44:32,381 - utils.data_fetcher - INFO - Fetching data for SI=F (SI=F) on 1h timeframe
+2026-05-13 08:44:32,381 - utils.data_fetcher - INFO - Fetching data for THETA-USD (THETA-USD) on 1h timeframe
+2026-05-13 08:44:32,381 - utils.data_fetcher - INFO - Fetching data for PL=F (PL=F) on 1h timeframe
+2026-05-13 08:44:32,383 - utils.data_fetcher - INFO - Fetching data for CL=F (CL=F) on 1h timeframe
+2026-05-13 08:44:32,381 - utils.data_fetcher - INFO - Fetching data for GC=F (GC=F) on 1h timeframe
+2026-05-13 08:44:32,436 - utils.data_fetcher - INFO - Successfully fetched 146 candles for PL=F
+2026-05-13 08:44:32,438 - utils.data_fetcher - INFO - Successfully fetched 146 candles for SI=F
+2026-05-13 08:44:32,440 - utils.data_fetcher - INFO - Successfully fetched 170 candles for THETA-USD
+2026-05-13 08:44:32,441 - utils.data_fetcher - INFO - Successfully fetched 146 candles for PA=F
+2026-05-13 08:44:32,458 - utils.data_fetcher - INFO - Successfully fetched 146 candles for GC=F
+2026-05-13 08:44:32,460 - utils.data_fetcher - INFO - Successfully fetched 146 candles for CL=F
+2026-05-13 08:44:34,437 - utils.data_fetcher - INFO - Fetching data for PL=F (PL=F) on 4h timeframe
+2026-05-13 08:44:34,443 - utils.data_fetcher - INFO - Fetching data for SI=F (SI=F) on 4h timeframe
+2026-05-13 08:44:34,459 - utils.data_fetcher - INFO - Fetching data for THETA-USD (THETA-USD) on 4h timeframe
+2026-05-13 08:44:34,459 - utils.data_fetcher - INFO - Fetching data for PA=F (PA=F) on 4h timeframe
+2026-05-13 08:44:34,461 - utils.data_fetcher - INFO - Fetching data for CL=F (CL=F) on 4h timeframe
+2026-05-13 08:44:34,462 - utils.data_fetcher - INFO - Fetching data for GC=F (GC=F) on 4h timeframe
+2026-05-13 08:44:34,469 - utils.data_fetcher - INFO - Successfully fetched 158 candles for PL=F
+2026-05-13 08:44:34,496 - utils.data_fetcher - INFO - Successfully fetched 158 candles for SI=F
+2026-05-13 08:44:34,561 - utils.data_fetcher - INFO - Successfully fetched 158 candles for CL=F
+2026-05-13 08:44:34,566 - utils.data_fetcher - INFO - Successfully fetched 158 candles for GC=F
+2026-05-13 08:44:34,598 - utils.data_fetcher - INFO - Successfully fetched 182 candles for THETA-USD
+2026-05-13 08:44:34,599 - utils.data_fetcher - INFO - Successfully fetched 158 candles for PA=F
+2026-05-13 08:44:34,663 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:34,695 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:34,695 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:34,695 - master_brain - INFO - agent3: BUY (45%)
+2026-05-13 08:44:34,696 - master_brain - INFO - agent4: SELL (15%)
+2026-05-13 08:44:34,696 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:34,696 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:34,696 - master_brain - INFO - Analysis complete for SI=F: HOLD (30%)
+2026-05-13 08:44:34,703 - master_brain - INFO - Analyzing BZ=F on 1h timeframe
+2026-05-13 08:44:34,861 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:34,876 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:34,876 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:34,876 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:34,876 - master_brain - INFO - agent4: SELL (15%)
+2026-05-13 08:44:34,876 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:34,876 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:34,876 - master_brain - INFO - Analysis complete for PL=F: HOLD (15%)
+2026-05-13 08:44:34,882 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:34,897 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:34,897 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:34,897 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:34,897 - master_brain - INFO - agent4: SELL (15%)
+2026-05-13 08:44:34,898 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:34,898 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:34,898 - master_brain - INFO - Analysis complete for CL=F: HOLD (15%)
+2026-05-13 08:44:34,898 - master_brain - INFO - Analyzing NG=F on 1h timeframe
+2026-05-13 08:44:34,898 - master_brain - INFO - Analyzing YM=F on 1h timeframe
+2026-05-13 08:44:34,902 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:34,923 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:34,923 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:34,923 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:34,923 - master_brain - INFO - agent4: BUY (23%)
+2026-05-13 08:44:34,923 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:34,923 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:34,923 - master_brain - INFO - Analysis complete for PA=F: HOLD (23%)
+2026-05-13 08:44:34,936 - master_brain - INFO - Analyzing ES=F on 1h timeframe
+2026-05-13 08:44:34,938 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:34,938 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:34,938 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:34,938 - master_brain - INFO - agent3: BUY (50%)
+2026-05-13 08:44:34,938 - master_brain - INFO - agent4: SELL (23%)
+2026-05-13 08:44:34,938 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:34,938 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:34,938 - master_brain - INFO - Analysis complete for THETA-USD: HOLD (36%)
+2026-05-13 08:44:34,938 - master_brain - INFO - Analyzing NQ=F on 1h timeframe
+2026-05-13 08:44:34,960 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:34,961 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:34,961 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:34,961 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:34,961 - master_brain - INFO - agent4: HOLD (30%)
+2026-05-13 08:44:34,961 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:34,961 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:34,961 - master_brain - INFO - Analysis complete for GC=F: HOLD (0%)
+2026-05-13 08:44:34,961 - master_brain - ERROR - Invalid symbol: ^GDAXI
+2026-05-13 08:44:34,961 - master_brain - ERROR - Invalid symbol: ^FTSE
+2026-05-13 08:44:34,961 - master_brain - ERROR - Invalid symbol: ^N225
+2026-05-13 08:44:34,961 - master_brain - INFO - Analyzing 000001.SS on 1h timeframe
+2026-05-13 08:44:36,676 - utils.data_fetcher - INFO - Fetching data for NQ=F (NQ=F) on 1h timeframe
+2026-05-13 08:44:36,676 - utils.data_fetcher - INFO - Fetching data for 000001.SS (000001.SS) on 1h timeframe
+2026-05-13 08:44:36,676 - utils.data_fetcher - INFO - Fetching data for YM=F (YM=F) on 1h timeframe
+2026-05-13 08:44:36,676 - utils.data_fetcher - INFO - Fetching data for ES=F (ES=F) on 1h timeframe
+2026-05-13 08:44:36,676 - utils.data_fetcher - INFO - Fetching data for NG=F (NG=F) on 1h timeframe
+2026-05-13 08:44:36,676 - utils.data_fetcher - INFO - Fetching data for BZ=F (BZ=F) on 1h timeframe
+2026-05-13 08:44:36,719 - utils.data_fetcher - INFO - Successfully fetched 146 candles for ES=F
+2026-05-13 08:44:36,721 - utils.data_fetcher - INFO - Successfully fetched 146 candles for NG=F
+2026-05-13 08:44:36,738 - utils.data_fetcher - WARNING - Data may be stale: last candle is 104.6 minutes old
+2026-05-13 08:44:36,738 - utils.data_fetcher - INFO - Successfully fetched 31 candles for 000001.SS
+2026-05-13 08:44:36,740 - utils.data_fetcher - INFO - Successfully fetched 146 candles for NQ=F
+2026-05-13 08:44:36,742 - utils.data_fetcher - INFO - Successfully fetched 146 candles for BZ=F
+2026-05-13 08:44:36,742 - utils.data_fetcher - INFO - Successfully fetched 146 candles for YM=F
+2026-05-13 08:44:38,722 - utils.data_fetcher - INFO - Fetching data for ES=F (ES=F) on 4h timeframe
+2026-05-13 08:44:38,723 - utils.data_fetcher - INFO - Fetching data for NG=F (NG=F) on 4h timeframe
+2026-05-13 08:44:38,742 - utils.data_fetcher - INFO - Fetching data for 000001.SS (000001.SS) on 4h timeframe
+2026-05-13 08:44:38,743 - utils.data_fetcher - INFO - Fetching data for NQ=F (NQ=F) on 4h timeframe
+2026-05-13 08:44:38,744 - utils.data_fetcher - INFO - Fetching data for YM=F (YM=F) on 4h timeframe
+2026-05-13 08:44:38,745 - utils.data_fetcher - INFO - Fetching data for BZ=F (BZ=F) on 4h timeframe
+2026-05-13 08:44:38,753 - utils.data_fetcher - INFO - Successfully fetched 158 candles for NG=F
+2026-05-13 08:44:38,779 - utils.data_fetcher - INFO - Successfully fetched 158 candles for ES=F
+2026-05-13 08:44:38,819 - utils.data_fetcher - INFO - Successfully fetched 158 candles for YM=F
+2026-05-13 08:44:38,857 - utils.data_fetcher - INFO - Successfully fetched 158 candles for NQ=F
+2026-05-13 08:44:38,877 - utils.data_fetcher - INFO - Successfully fetched 158 candles for BZ=F
+2026-05-13 08:44:38,922 - utils.data_fetcher - INFO - Successfully fetched 39 candles for 000001.SS
+2026-05-13 08:44:39,063 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:39,077 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:39,077 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:39,078 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:39,078 - master_brain - INFO - agent4: BUY (23%)
+2026-05-13 08:44:39,078 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:39,078 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:39,078 - master_brain - INFO - Analysis complete for ES=F: HOLD (23%)
+2026-05-13 08:44:39,117 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:39,118 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:39,121 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:39,121 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:39,121 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:39,121 - master_brain - INFO - agent4: SELL (21%)
+2026-05-13 08:44:39,121 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:39,121 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:39,121 - master_brain - INFO - Analysis complete for YM=F: HOLD (21%)
+2026-05-13 08:44:39,118 - master_brain - ERROR - Invalid symbol: ^HSI
+2026-05-13 08:44:39,122 - master_brain - ERROR - Invalid symbol: ^STOXX50E
+2026-05-13 08:44:39,122 - master_brain - ERROR - Invalid symbol: ^AXJO
+2026-05-13 08:44:39,122 - master_brain - INFO - Analyzing AAPL on 1h timeframe
+2026-05-13 08:44:39,122 - master_brain - INFO - Analyzing MSFT on 1h timeframe
+2026-05-13 08:44:39,119 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:39,122 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:39,122 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:39,122 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:39,122 - master_brain - INFO - agent4: BUY (15%)
+2026-05-13 08:44:39,122 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:39,122 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:39,122 - master_brain - INFO - Analysis complete for NG=F: HOLD (15%)
+2026-05-13 08:44:39,121 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:39,135 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:39,136 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:39,136 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:39,136 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:39,136 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:39,136 - master_brain - INFO - Analysis complete for 000001.SS: HOLD (0%)
+2026-05-13 08:44:39,138 - master_brain - INFO - Analyzing GOOGL on 1h timeframe
+2026-05-13 08:44:39,156 - master_brain - INFO - Analyzing AMZN on 1h timeframe
+2026-05-13 08:44:39,165 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:39,177 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:39,177 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:39,177 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:39,177 - master_brain - INFO - agent4: SELL (15%)
+2026-05-13 08:44:39,177 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:39,177 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:39,178 - master_brain - INFO - Analysis complete for BZ=F: HOLD (15%)
+2026-05-13 08:44:39,178 - master_brain - INFO - Analyzing TSLA on 1h timeframe
+2026-05-13 08:44:39,181 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:39,181 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:39,181 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:39,181 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:39,181 - master_brain - INFO - agent4: HOLD (30%)
+2026-05-13 08:44:39,181 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:39,181 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:39,181 - master_brain - INFO - Analysis complete for NQ=F: HOLD (0%)
+2026-05-13 08:44:39,181 - master_brain - INFO - Analyzing META on 1h timeframe
+2026-05-13 08:44:40,937 - utils.data_fetcher - INFO - Fetching data for MSFT (MSFT) on 1h timeframe
+2026-05-13 08:44:40,937 - utils.data_fetcher - INFO - Fetching data for META (META) on 1h timeframe
+2026-05-13 08:44:40,937 - utils.data_fetcher - INFO - Fetching data for TSLA (TSLA) on 1h timeframe
+2026-05-13 08:44:40,937 - utils.data_fetcher - INFO - Fetching data for AAPL (AAPL) on 1h timeframe
+2026-05-13 08:44:40,938 - utils.data_fetcher - INFO - Fetching data for GOOGL (GOOGL) on 1h timeframe
+2026-05-13 08:44:40,938 - utils.data_fetcher - INFO - Fetching data for AMZN (AMZN) on 1h timeframe
+2026-05-13 08:44:40,987 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.7 minutes old
+2026-05-13 08:44:40,987 - utils.data_fetcher - INFO - Successfully fetched 36 candles for AMZN
+2026-05-13 08:44:40,989 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.7 minutes old
+2026-05-13 08:44:40,989 - utils.data_fetcher - INFO - Successfully fetched 36 candles for TSLA
+2026-05-13 08:44:40,990 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.7 minutes old
+2026-05-13 08:44:40,990 - utils.data_fetcher - INFO - Successfully fetched 36 candles for GOOGL
+2026-05-13 08:44:40,995 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.7 minutes old
+2026-05-13 08:44:40,995 - utils.data_fetcher - INFO - Successfully fetched 36 candles for AAPL
+2026-05-13 08:44:41,003 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.7 minutes old
+2026-05-13 08:44:41,003 - utils.data_fetcher - INFO - Successfully fetched 36 candles for MSFT
+2026-05-13 08:44:41,007 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.7 minutes old
+2026-05-13 08:44:41,007 - utils.data_fetcher - INFO - Successfully fetched 36 candles for META
+2026-05-13 08:44:42,988 - utils.data_fetcher - INFO - Fetching data for AMZN (AMZN) on 4h timeframe
+2026-05-13 08:44:42,989 - utils.data_fetcher - INFO - Fetching data for TSLA (TSLA) on 4h timeframe
+2026-05-13 08:44:42,991 - utils.data_fetcher - INFO - Fetching data for GOOGL (GOOGL) on 4h timeframe
+2026-05-13 08:44:42,996 - utils.data_fetcher - INFO - Fetching data for AAPL (AAPL) on 4h timeframe
+2026-05-13 08:44:43,003 - utils.data_fetcher - INFO - Fetching data for MSFT (MSFT) on 4h timeframe
+2026-05-13 08:44:43,016 - utils.data_fetcher - INFO - Fetching data for META (META) on 4h timeframe
+2026-05-13 08:44:43,024 - utils.data_fetcher - INFO - Successfully fetched 45 candles for TSLA
+2026-05-13 08:44:43,038 - utils.data_fetcher - INFO - Successfully fetched 45 candles for GOOGL
+2026-05-13 08:44:43,040 - utils.data_fetcher - INFO - Successfully fetched 45 candles for AMZN
+2026-05-13 08:44:43,097 - utils.data_fetcher - INFO - Successfully fetched 45 candles for AAPL
+2026-05-13 08:44:43,098 - utils.data_fetcher - INFO - Successfully fetched 45 candles for META
+2026-05-13 08:44:43,100 - utils.data_fetcher - INFO - Successfully fetched 45 candles for MSFT
+2026-05-13 08:44:43,084 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:43,181 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:43,181 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:43,181 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:43,181 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:43,181 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:43,181 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:43,181 - master_brain - INFO - Analysis complete for TSLA: HOLD (0%)
+2026-05-13 08:44:43,242 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:43,243 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:43,243 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:43,243 - master_brain - INFO - agent3: BUY (45%)
+2026-05-13 08:44:43,243 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:43,243 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:43,243 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:43,243 - master_brain - INFO - Analysis complete for GOOGL: HOLD (45%)
+2026-05-13 08:44:43,255 - master_brain - INFO - Analyzing NVDA on 1h timeframe
+2026-05-13 08:44:43,259 - master_brain - INFO - Analyzing BRK-B on 1h timeframe
+2026-05-13 08:44:43,276 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:43,281 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:43,282 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:43,295 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:43,296 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:43,301 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:43,315 - master_brain - INFO - agent3: BUY (45%)
+2026-05-13 08:44:43,339 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:43,339 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:43,339 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:43,339 - master_brain - INFO - Analysis complete for AAPL: HOLD (45%)
+2026-05-13 08:44:43,339 - master_brain - INFO - Analyzing JPM on 1h timeframe
+2026-05-13 08:44:43,339 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:43,339 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:43,339 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:43,339 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:43,340 - master_brain - INFO - Analysis complete for AMZN: HOLD (0%)
+2026-05-13 08:44:43,340 - master_brain - ERROR - Invalid symbol: V
+2026-05-13 08:44:43,340 - master_brain - INFO - Analyzing JNJ on 1h timeframe
+2026-05-13 08:44:43,338 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:43,340 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:43,340 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:43,340 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:43,340 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:43,341 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:43,341 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:43,341 - master_brain - INFO - Analysis complete for META: HOLD (0%)
+2026-05-13 08:44:43,341 - master_brain - INFO - Analyzing WMT on 1h timeframe
+2026-05-13 08:44:43,358 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:43,358 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:43,358 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:43,358 - master_brain - INFO - agent3: SELL (50%)
+2026-05-13 08:44:43,358 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:43,358 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:43,358 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:43,358 - master_brain - INFO - Analysis complete for MSFT: HOLD (50%)
+2026-05-13 08:44:43,359 - master_brain - INFO - Analyzing PG on 1h timeframe
+2026-05-13 08:44:45,182 - utils.data_fetcher - INFO - Fetching data for WMT (WMT) on 1h timeframe
+2026-05-13 08:44:45,182 - utils.data_fetcher - INFO - Fetching data for NVDA (NVDA) on 1h timeframe
+2026-05-13 08:44:45,182 - utils.data_fetcher - INFO - Fetching data for JNJ (JNJ) on 1h timeframe
+2026-05-13 08:44:45,182 - utils.data_fetcher - INFO - Fetching data for BRK-B (BRK-B) on 1h timeframe
+2026-05-13 08:44:45,182 - utils.data_fetcher - INFO - Fetching data for JPM (JPM) on 1h timeframe
+2026-05-13 08:44:45,182 - utils.data_fetcher - INFO - Fetching data for PG (PG) on 1h timeframe
+2026-05-13 08:44:45,226 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:45,226 - utils.data_fetcher - INFO - Successfully fetched 36 candles for JPM
+2026-05-13 08:44:45,243 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:45,244 - utils.data_fetcher - INFO - Successfully fetched 36 candles for WMT
+2026-05-13 08:44:45,246 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:45,246 - utils.data_fetcher - INFO - Successfully fetched 36 candles for JNJ
+2026-05-13 08:44:45,247 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:45,248 - utils.data_fetcher - INFO - Successfully fetched 36 candles for PG
+2026-05-13 08:44:45,263 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:45,264 - utils.data_fetcher - INFO - Successfully fetched 36 candles for NVDA
+2026-05-13 08:44:45,266 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:45,266 - utils.data_fetcher - INFO - Successfully fetched 36 candles for BRK-B
+2026-05-13 08:44:47,227 - utils.data_fetcher - INFO - Fetching data for JPM (JPM) on 4h timeframe
+2026-05-13 08:44:47,244 - utils.data_fetcher - INFO - Fetching data for WMT (WMT) on 4h timeframe
+2026-05-13 08:44:47,248 - utils.data_fetcher - INFO - Fetching data for JNJ (JNJ) on 4h timeframe
+2026-05-13 08:44:47,248 - utils.data_fetcher - INFO - Fetching data for PG (PG) on 4h timeframe
+2026-05-13 08:44:47,265 - utils.data_fetcher - INFO - Successfully fetched 45 candles for JPM
+2026-05-13 08:44:47,265 - utils.data_fetcher - INFO - Fetching data for NVDA (NVDA) on 4h timeframe
+2026-05-13 08:44:47,275 - utils.data_fetcher - INFO - Fetching data for BRK-B (BRK-B) on 4h timeframe
+2026-05-13 08:44:47,299 - utils.data_fetcher - INFO - Successfully fetched 45 candles for PG
+2026-05-13 08:44:47,324 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:47,361 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:47,361 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:47,361 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:47,361 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:47,361 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:47,361 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:47,361 - master_brain - INFO - Analysis complete for JPM: HOLD (0%)
+2026-05-13 08:44:47,343 - utils.data_fetcher - INFO - Successfully fetched 45 candles for JNJ
+2026-05-13 08:44:47,360 - utils.data_fetcher - INFO - Successfully fetched 45 candles for WMT
+2026-05-13 08:44:47,362 - master_brain - INFO - Analyzing MA on 1h timeframe
+2026-05-13 08:44:47,418 - utils.data_fetcher - INFO - Successfully fetched 45 candles for BRK-B
+2026-05-13 08:44:47,420 - utils.data_fetcher - INFO - Successfully fetched 45 candles for NVDA
+2026-05-13 08:44:47,558 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:47,638 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:47,638 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:47,638 - master_brain - INFO - agent3: SELL (45%)
+2026-05-13 08:44:47,638 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:47,638 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:47,638 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:47,639 - master_brain - INFO - Analysis complete for PG: HOLD (45%)
+2026-05-13 08:44:47,604 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:47,639 - master_brain - INFO - Analyzing UNH on 1h timeframe
+2026-05-13 08:44:47,639 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:47,639 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:47,639 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:47,639 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:47,639 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:47,639 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:47,639 - master_brain - INFO - Analysis complete for BRK-B: HOLD (0%)
+2026-05-13 08:44:47,639 - master_brain - INFO - Analyzing HD on 1h timeframe
+2026-05-13 08:44:47,637 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:47,641 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:47,641 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:47,641 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:47,641 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:47,641 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:47,641 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:47,641 - master_brain - INFO - Analysis complete for NVDA: HOLD (0%)
+2026-05-13 08:44:47,641 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:47,642 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:47,642 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:47,642 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:47,642 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:47,642 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:47,642 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:47,642 - master_brain - INFO - Analysis complete for JNJ: HOLD (0%)
+2026-05-13 08:44:47,642 - master_brain - INFO - Analyzing DIS on 1h timeframe
+2026-05-13 08:44:47,643 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:47,643 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:47,644 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:47,644 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:47,644 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:47,644 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:47,644 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:47,644 - master_brain - INFO - Analysis complete for WMT: HOLD (0%)
+2026-05-13 08:44:47,644 - master_brain - INFO - Analyzing BAC on 1h timeframe
+2026-05-13 08:44:47,644 - master_brain - INFO - Analyzing NFLX on 1h timeframe
+2026-05-13 08:44:49,382 - utils.data_fetcher - INFO - Fetching data for MA (MA) on 1h timeframe
+2026-05-13 08:44:49,423 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:49,423 - utils.data_fetcher - INFO - Successfully fetched 36 candles for MA
+2026-05-13 08:44:49,497 - utils.data_fetcher - INFO - Fetching data for NFLX (NFLX) on 1h timeframe
+2026-05-13 08:44:49,497 - utils.data_fetcher - INFO - Fetching data for UNH (UNH) on 1h timeframe
+2026-05-13 08:44:49,499 - utils.data_fetcher - INFO - Fetching data for HD (HD) on 1h timeframe
+2026-05-13 08:44:49,499 - utils.data_fetcher - INFO - Fetching data for BAC (BAC) on 1h timeframe
+2026-05-13 08:44:49,500 - utils.data_fetcher - INFO - Fetching data for DIS (DIS) on 1h timeframe
+2026-05-13 08:44:49,541 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:49,541 - utils.data_fetcher - INFO - Successfully fetched 36 candles for NFLX
+2026-05-13 08:44:49,543 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:49,543 - utils.data_fetcher - INFO - Successfully fetched 36 candles for UNH
+2026-05-13 08:44:49,545 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:49,546 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:49,547 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.8 minutes old
+2026-05-13 08:44:49,548 - utils.data_fetcher - INFO - Successfully fetched 36 candles for BAC
+2026-05-13 08:44:49,548 - utils.data_fetcher - INFO - Successfully fetched 36 candles for HD
+2026-05-13 08:44:49,548 - utils.data_fetcher - INFO - Successfully fetched 36 candles for DIS
+2026-05-13 08:44:51,424 - utils.data_fetcher - INFO - Fetching data for MA (MA) on 4h timeframe
+2026-05-13 08:44:51,459 - utils.data_fetcher - INFO - Successfully fetched 45 candles for MA
+2026-05-13 08:44:51,485 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:51,485 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:51,485 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:51,485 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:51,485 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:51,485 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:51,485 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:51,485 - master_brain - INFO - Analysis complete for MA: HOLD (0%)
+2026-05-13 08:44:51,486 - master_brain - INFO - Analyzing ADBE on 1h timeframe
+2026-05-13 08:44:51,542 - utils.data_fetcher - INFO - Fetching data for NFLX (NFLX) on 4h timeframe
+2026-05-13 08:44:51,548 - utils.data_fetcher - INFO - Fetching data for UNH (UNH) on 4h timeframe
+2026-05-13 08:44:51,549 - utils.data_fetcher - INFO - Fetching data for HD (HD) on 4h timeframe
+2026-05-13 08:44:51,549 - utils.data_fetcher - INFO - Fetching data for BAC (BAC) on 4h timeframe
+2026-05-13 08:44:51,551 - utils.data_fetcher - INFO - Fetching data for DIS (DIS) on 4h timeframe
+2026-05-13 08:44:51,579 - utils.data_fetcher - INFO - Successfully fetched 45 candles for NFLX
+2026-05-13 08:44:51,619 - utils.data_fetcher - INFO - Successfully fetched 45 candles for UNH
+2026-05-13 08:44:51,620 - utils.data_fetcher - INFO - Successfully fetched 45 candles for BAC
+2026-05-13 08:44:51,657 - utils.data_fetcher - INFO - Successfully fetched 45 candles for DIS
+2026-05-13 08:44:51,697 - utils.data_fetcher - INFO - Successfully fetched 45 candles for HD
+2026-05-13 08:44:51,744 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:51,757 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:51,823 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:51,816 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:51,823 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:51,797 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:51,835 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:51,823 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:51,824 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:51,823 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:51,824 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:51,836 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:51,836 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:51,835 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:51,836 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:51,836 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:51,837 - master_brain - INFO - Analysis complete for NFLX: HOLD (0%)
+2026-05-13 08:44:51,837 - master_brain - INFO - Analyzing CRM on 1h timeframe
+2026-05-13 08:44:51,836 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:51,837 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:51,835 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:51,837 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:51,837 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:51,836 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:51,836 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:51,838 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:51,838 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:51,838 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:51,838 - master_brain - INFO - agent3: BUY (50%)
+2026-05-13 08:44:51,838 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:51,838 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:51,838 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:51,838 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:51,839 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:51,838 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:51,839 - master_brain - INFO - Analysis complete for HD: HOLD (0%)
+2026-05-13 08:44:51,839 - master_brain - INFO - Analysis complete for UNH: HOLD (50%)
+2026-05-13 08:44:51,839 - master_brain - INFO - Analyzing PEP on 1h timeframe
+2026-05-13 08:44:51,839 - master_brain - INFO - Analyzing CSCO on 1h timeframe
+2026-05-13 08:44:51,838 - master_brain - INFO - Analysis complete for DIS: HOLD (0%)
+2026-05-13 08:44:51,838 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:51,840 - master_brain - INFO - Analyzing KO on 1h timeframe
+2026-05-13 08:44:51,840 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:51,840 - master_brain - INFO - Analysis complete for BAC: HOLD (0%)
+2026-05-13 08:44:51,840 - master_brain - INFO - Analyzing INTC on 1h timeframe
+2026-05-13 08:44:53,459 - utils.data_fetcher - INFO - Fetching data for ADBE (ADBE) on 1h timeframe
+2026-05-13 08:44:53,498 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.9 minutes old
+2026-05-13 08:44:53,498 - utils.data_fetcher - INFO - Successfully fetched 36 candles for ADBE
+2026-05-13 08:44:53,719 - utils.data_fetcher - INFO - Fetching data for KO (KO) on 1h timeframe
+2026-05-13 08:44:53,720 - utils.data_fetcher - INFO - Fetching data for CRM (CRM) on 1h timeframe
+2026-05-13 08:44:53,720 - utils.data_fetcher - INFO - Fetching data for INTC (INTC) on 1h timeframe
+2026-05-13 08:44:53,720 - utils.data_fetcher - INFO - Fetching data for PEP (PEP) on 1h timeframe
+2026-05-13 08:44:53,720 - utils.data_fetcher - INFO - Fetching data for CSCO (CSCO) on 1h timeframe
+2026-05-13 08:44:53,752 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.9 minutes old
+2026-05-13 08:44:53,752 - utils.data_fetcher - INFO - Successfully fetched 36 candles for KO
+2026-05-13 08:44:53,760 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.9 minutes old
+2026-05-13 08:44:53,760 - utils.data_fetcher - INFO - Successfully fetched 36 candles for CRM
+2026-05-13 08:44:53,762 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.9 minutes old
+2026-05-13 08:44:53,764 - utils.data_fetcher - INFO - Successfully fetched 36 candles for INTC
+2026-05-13 08:44:53,764 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.9 minutes old
+2026-05-13 08:44:53,764 - utils.data_fetcher - INFO - Successfully fetched 36 candles for CSCO
+2026-05-13 08:44:53,763 - utils.data_fetcher - WARNING - Data may be stale: last candle is 764.9 minutes old
+2026-05-13 08:44:53,765 - utils.data_fetcher - INFO - Successfully fetched 36 candles for PEP
+2026-05-13 08:44:55,499 - utils.data_fetcher - INFO - Fetching data for ADBE (ADBE) on 4h timeframe
+2026-05-13 08:44:55,537 - utils.data_fetcher - INFO - Successfully fetched 45 candles for ADBE
+2026-05-13 08:44:55,564 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:55,564 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:55,564 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:55,564 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:55,564 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:55,564 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:55,564 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:55,564 - master_brain - INFO - Analysis complete for ADBE: HOLD (0%)
+2026-05-13 08:44:55,564 - master_brain - INFO - Analyzing AMD on 1h timeframe
+2026-05-13 08:44:55,753 - utils.data_fetcher - INFO - Fetching data for KO (KO) on 4h timeframe
+2026-05-13 08:44:55,760 - utils.data_fetcher - INFO - Fetching data for CRM (CRM) on 4h timeframe
+2026-05-13 08:44:55,765 - utils.data_fetcher - INFO - Fetching data for CSCO (CSCO) on 4h timeframe
+2026-05-13 08:44:55,766 - utils.data_fetcher - INFO - Fetching data for PEP (PEP) on 4h timeframe
+2026-05-13 08:44:55,767 - utils.data_fetcher - INFO - Fetching data for INTC (INTC) on 4h timeframe
+2026-05-13 08:44:55,798 - utils.data_fetcher - INFO - Successfully fetched 45 candles for KO
+2026-05-13 08:44:55,801 - utils.data_fetcher - INFO - Successfully fetched 45 candles for PEP
+2026-05-13 08:44:55,818 - utils.data_fetcher - INFO - Successfully fetched 45 candles for CRM
+2026-05-13 08:44:55,841 - utils.data_fetcher - INFO - Successfully fetched 45 candles for CSCO
+2026-05-13 08:44:55,842 - utils.data_fetcher - INFO - Successfully fetched 45 candles for INTC
+2026-05-13 08:44:56,024 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:56,040 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:56,042 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:56,060 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:56,060 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:56,059 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:56,060 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:56,060 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:56,060 - master_brain - INFO - agent3: SELL (50%)
+2026-05-13 08:44:56,060 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:56,060 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:56,060 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:44:56,060 - master_brain - INFO - Analysis complete for CSCO: HOLD (50%)
+2026-05-13 08:44:56,060 - master_brain - INFO - Analyzing ORCL on 1h timeframe
+2026-05-13 08:44:56,042 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:56,061 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:56,061 - master_brain - INFO - agent3: BUY (50%)
+2026-05-13 08:44:56,061 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:56,061 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:56,061 - master_brain - INFO - REASON FOR HOLD: Only 1 BUY votes. Need 3.
+2026-05-13 08:44:56,061 - master_brain - INFO - Analysis complete for INTC: HOLD (50%)
+2026-05-13 08:44:56,061 - master_brain - INFO - Analyzing IBM on 1h timeframe
+2026-05-13 08:44:56,043 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:56,062 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:56,062 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:56,062 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:56,062 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:56,062 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:56,062 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:56,062 - master_brain - INFO - Analysis complete for CRM: HOLD (0%)
+2026-05-13 08:44:56,062 - master_brain - INFO - Analyzing QCOM on 1h timeframe
+2026-05-13 08:44:56,060 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:56,062 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:56,062 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:56,062 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:56,062 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:56,062 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:56,063 - master_brain - INFO - Analysis complete for KO: HOLD (0%)
+2026-05-13 08:44:56,060 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:56,063 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:56,063 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:56,063 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:56,063 - master_brain - INFO - Analysis complete for PEP: HOLD (0%)
+2026-05-13 08:44:56,063 - master_brain - INFO - Analyzing BA on 1h timeframe
+2026-05-13 08:44:57,538 - utils.data_fetcher - INFO - Fetching data for AMD (AMD) on 1h timeframe
+2026-05-13 08:44:57,574 - utils.data_fetcher - WARNING - Data may be stale: last candle is 765.0 minutes old
+2026-05-13 08:44:57,574 - utils.data_fetcher - INFO - Successfully fetched 36 candles for AMD
+2026-05-13 08:44:57,877 - utils.data_fetcher - INFO - Fetching data for BA (BA) on 1h timeframe
+2026-05-13 08:44:57,878 - utils.data_fetcher - INFO - Fetching data for ORCL (ORCL) on 1h timeframe
+2026-05-13 08:44:57,879 - utils.data_fetcher - INFO - Fetching data for IBM (IBM) on 1h timeframe
+2026-05-13 08:44:57,880 - utils.data_fetcher - INFO - Fetching data for QCOM (QCOM) on 1h timeframe
+2026-05-13 08:44:57,923 - utils.data_fetcher - WARNING - Data may be stale: last candle is 765.0 minutes old
+2026-05-13 08:44:57,925 - utils.data_fetcher - INFO - Successfully fetched 36 candles for ORCL
+2026-05-13 08:44:57,925 - utils.data_fetcher - WARNING - Data may be stale: last candle is 765.0 minutes old
+2026-05-13 08:44:57,926 - utils.data_fetcher - INFO - Successfully fetched 36 candles for QCOM
+2026-05-13 08:44:57,929 - utils.data_fetcher - WARNING - Data may be stale: last candle is 765.0 minutes old
+2026-05-13 08:44:57,930 - utils.data_fetcher - WARNING - Data may be stale: last candle is 765.0 minutes old
+2026-05-13 08:44:57,930 - utils.data_fetcher - INFO - Successfully fetched 36 candles for BA
+2026-05-13 08:44:57,931 - utils.data_fetcher - INFO - Successfully fetched 36 candles for IBM
+2026-05-13 08:44:59,575 - utils.data_fetcher - INFO - Fetching data for AMD (AMD) on 4h timeframe
+2026-05-13 08:44:59,611 - utils.data_fetcher - INFO - Successfully fetched 45 candles for AMD
+2026-05-13 08:44:59,643 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:44:59,643 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:44:59,643 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:44:59,643 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:44:59,643 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:44:59,643 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:44:59,643 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:44:59,643 - master_brain - INFO - Analysis complete for AMD: HOLD (0%)
+2026-05-13 08:44:59,926 - utils.data_fetcher - INFO - Fetching data for ORCL (ORCL) on 4h timeframe
+2026-05-13 08:44:59,928 - utils.data_fetcher - INFO - Fetching data for QCOM (QCOM) on 4h timeframe
+2026-05-13 08:44:59,931 - utils.data_fetcher - INFO - Fetching data for BA (BA) on 4h timeframe
+2026-05-13 08:44:59,933 - utils.data_fetcher - INFO - Fetching data for IBM (IBM) on 4h timeframe
+2026-05-13 08:44:59,964 - utils.data_fetcher - INFO - Successfully fetched 45 candles for ORCL
+2026-05-13 08:44:59,966 - utils.data_fetcher - INFO - Successfully fetched 45 candles for QCOM
+2026-05-13 08:44:59,985 - utils.data_fetcher - INFO - Successfully fetched 45 candles for IBM
+2026-05-13 08:44:59,997 - utils.data_fetcher - INFO - Successfully fetched 45 candles for BA
+2026-05-13 08:45:00,101 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:45:00,135 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:45:00,135 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:45:00,135 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:45:00,136 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:45:00,136 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:45:00,136 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:45:00,136 - master_brain - INFO - Analysis complete for ORCL: HOLD (0%)
+2026-05-13 08:45:00,161 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:45:00,162 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:45:00,163 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:45:00,163 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:45:00,164 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:45:00,164 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:45:00,164 - master_brain - INFO - agent3: HOLD (20%)
+2026-05-13 08:45:00,165 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:45:00,164 - master_brain - INFO - agent3: SELL (50%)
+2026-05-13 08:45:00,176 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:45:00,165 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:45:00,164 - master_brain - INFO - --- SIGNAL DEBUGGER ---
+2026-05-13 08:45:00,176 - master_brain - INFO - agent1: HOLD (0%)
+2026-05-13 08:45:00,176 - master_brain - INFO - REASON FOR HOLD: Only 0 SELL votes. Need 3.
+2026-05-13 08:45:00,176 - master_brain - INFO - agent2: HOLD (25%)
+2026-05-13 08:45:00,177 - master_brain - INFO - agent3: SELL (45%)
+2026-05-13 08:45:00,177 - master_brain - INFO - Analysis complete for QCOM: HOLD (0%)
+2026-05-13 08:45:00,176 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:45:00,177 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:45:00,177 - master_brain - INFO - agent4: HOLD (0%)
+2026-05-13 08:45:00,178 - master_brain - INFO - Analysis complete for IBM: HOLD (50%)
+2026-05-13 08:45:00,178 - master_brain - INFO - agent5: N/A (90%)
+2026-05-13 08:45:00,178 - master_brain - INFO - REASON FOR HOLD: Only 1 SELL votes. Need 3.
+2026-05-13 08:45:00,178 - master_brain - INFO - Analysis complete for BA: HOLD (45%)
+2026-05-13 08:45:00,179 - MarketScanner - INFO - ⏳ Progress: 20/108 | Found 0 signals so far
+2026-05-13 08:45:00,179 - MarketScanner - INFO - ⏳ Progress: 40/108 | Found 0 signals so far
+2026-05-13 08:45:00,179 - MarketScanner - INFO - ⏳ Progress: 60/108 | Found 0 signals so far
+2026-05-13 08:45:00,179 - MarketScanner - INFO - ⏳ Progress: 80/108 | Found 0 signals so far
+2026-05-13 08:45:00,179 - MarketScanner - INFO - ⏳ Progress: 100/108 | Found 0 signals so far
+2026-05-13 08:45:00,179 - MarketScanner - INFO - ============================================================
+2026-05-13 08:45:00,179 - MarketScanner - INFO - ✅ SCAN COMPLETE in 70.64s
+2026-05-13 08:45:00,179 - MarketScanner - INFO - 📈 BUY signals: 0 | 📉 SELL signals: 0
+2026-05-13 08:45:00,179 - MarketScanner - INFO - 🎯 Success rate: 100.0% (108/108)
+2026-05-13 08:45:00,179 - MarketScanner - INFO - ============================================================
+2026-05-13 08:45:00,180 - MarketScanner - INFO - ✅ Cache saved: 0 trades found

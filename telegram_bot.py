@@ -162,7 +162,12 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         user_states[user_id] = {'state': IDLE}
         menu_text = format_menu_message()
         keyboard = get_main_menu_keyboard()
-        await query.edit_message_text(text=menu_text, reply_markup=keyboard)
+        await query.answer()
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text=menu_text,
+            reply_markup=keyboard
+        )
         return
     
     # Find best trades
@@ -175,7 +180,12 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         user_states[user_id] = {'state': CHOOSE_ASSET_GROUP}
         group_text = "╔═══════════════════════════════╗\n║ 📊 SELECT ASSET GROUP         ║\n╚═══════════════════════════════╝\n\nChoose an asset category:"
         keyboard = get_asset_groups_keyboard()
-        await query.edit_message_text(text=group_text, reply_markup=keyboard)
+        await query.answer()
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text=group_text,
+            reply_markup=keyboard
+        )
         return
     
     # Asset group selection
@@ -186,7 +196,12 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         
         group_text = format_asset_group_message(group_name)
         keyboard = get_assets_keyboard(group_name)
-        await query.edit_message_text(text=group_text, reply_markup=keyboard)
+        await query.answer()
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text=group_text,
+            reply_markup=keyboard
+        )
         return
     
     # Asset selection
@@ -197,7 +212,12 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         
         tf_text = format_timeframe_message()
         keyboard = get_timeframe_keyboard()
-        await query.edit_message_text(text=tf_text, reply_markup=keyboard)
+        await query.answer()
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text=tf_text,
+            reply_markup=keyboard
+        )
         return
     
     # Timeframe selection
@@ -214,7 +234,12 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
         user_states[user_id]['state'] = CHOOSE_ASSET_GROUP
         group_text = "╔═══════════════════════════════╗\n║ 📊 SELECT ASSET GROUP         ║\n╚═══════════════════════════════╝\n\nChoose an asset category:"
         keyboard = get_asset_groups_keyboard()
-        await query.edit_message_text(text=group_text, reply_markup=keyboard)
+        await query.answer()
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text=group_text,
+            reply_markup=keyboard
+        )
         return
 
 
@@ -252,8 +277,9 @@ async def handle_find_best_trades(query, context: ContextTypes.DEFAULT_TYPE) -> 
         cache_data = load_cache_data()
         
         if not cache_data or not cache_data.get('top_trades'):
-            # No cache available
-            await query.edit_message_text(
+            # No cache available - send new message instead of editing
+            await context.bot.send_message(
+                chat_id=query.message.chat_id,
                 text="🔍 No recent scan data available.\n\n"
                      "⚡ The AI scanner hasn't completed a scan yet.\n\n"
                      "💡 Please ensure market_scanner.py is running in the background.\n"
@@ -354,8 +380,12 @@ async def handle_find_best_trades(query, context: ContextTypes.DEFAULT_TYPE) -> 
         
     except Exception as e:
         logger.error(f"Error in find_best_trades: {e}", exc_info=True)
+        # Send error message instead of editing
         error_msg = format_error_message(str(e))
-        await query.edit_message_text(text=error_msg)
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text=error_msg
+        )
 
 
 def load_cache_data() -> dict:
@@ -376,10 +406,13 @@ async def perform_single_analysis(query, context: ContextTypes.DEFAULT_TYPE, use
     timeframe = state.get('timeframe')
     
     if not symbol or not timeframe:
-        await query.edit_message_text(text="❌ Error: Missing symbol or timeframe. Please start over.")
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text="❌ Error: Missing symbol or timeframe. Please start over."
+        )
         return
     
-    await query.edit_message_text(text=f"🧠 Analyzing {symbol} on {timeframe} timeframe... Please wait.")
+    await query.answer()  # Acknowledge the callback
     
     try:
         brain: MasterBrain = context.bot_data['brain']
@@ -417,7 +450,10 @@ async def perform_single_analysis(query, context: ContextTypes.DEFAULT_TYPE, use
     except Exception as e:
         logger.error(f"Error in single analysis: {e}", exc_info=True)
         error_msg = format_error_message(str(e))
-        await query.edit_message_text(text=error_msg)
+        await context.bot.send_message(
+            chat_id=query.message.chat_id,
+            text=error_msg
+        )
         
         # Reset state on error
         user_states[user_id] = {'state': IDLE}
