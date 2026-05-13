@@ -35,7 +35,7 @@ super_ai_trader/
 ├── config.py                 # Configuration settings
 ├── master_brain.py           # Core orchestrator
 ├── run.py                    # Main entry point
-├── telegram_bot.py           # Telegram interface (TODO)
+├── telegram_bot.py           # Telegram interface with interactive menu ✅
 ├── self_learning.py          # Genetic algorithm engine (TODO)
 ├── agents/
 │   ├── base_agent.py         # Abstract base class
@@ -98,11 +98,14 @@ python run.py
 The system will automatically run in demo mode if MT5 connection fails, generating synthetic data for testing.
 
 ### Telegram Commands
-- `/start` - Start trading system
-- `/stop` - Stop trading system
-- `/status` - Get system status
-- `/risk` - View risk management report
-- `/evolution` - View strategy evolution
+- `/start` - Welcome message and bot introduction
+- `/menu` - Show interactive control menu with buttons 🎛️
+- `/status` - Get system status and metrics
+- `/signals` - View recent trading signals
+- `/balance` - View account balance and risk report
+- `/start_trading` - Enable trading system
+- `/stop_trading` - Disable trading system
+- `/refresh` - Trigger immediate market analysis
 - `/help` - Show help message
 
 ### Signal Format

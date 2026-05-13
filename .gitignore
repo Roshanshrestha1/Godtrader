@@ -1,1 +1,40 @@
-Nothing should be ignored based on the provided file changes. The only added file is a Python source file (`super_ai_trader/data/tradingview_data.py`), which should not be ignored. There are no build artifacts, dependencies, temporary files, or other items that require ignoring.
+```
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.coverage
+htmlcov/
+.coverage.*
+.python-version
+
+# Virtual environments
+venv/
+ENV/
+.env
+.env.*
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.mypy_cache/
+```

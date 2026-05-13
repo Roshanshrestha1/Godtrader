@@ -4,8 +4,9 @@ Central configuration for tokens, risk parameters, symbols, and system settings.
 """
 
 # Telegram Configuration
-TELEGRAM_BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
-TELEGRAM_CHAT_ID = "YOUR_TELEGRAM_CHAT_ID"
+# Get your bot token from @BotFather on Telegram
+TELEGRAM_BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"  # Replace with your actual bot token
+TELEGRAM_CHAT_ID = None  # Optional: Set to your chat ID to receive signals, or leave as None to broadcast
 
 # Data Source Configuration
 # Options: 'binance', 'yfinance', 'auto' (auto tries binance first, falls back to yfinance)
