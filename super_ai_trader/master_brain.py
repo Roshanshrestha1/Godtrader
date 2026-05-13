@@ -46,7 +46,7 @@ class MasterBrain:
     - Maintain system state
     """
     
-    def __init__(self):
+    def __init__(self, data_source: str = 'auto'):
         # Initialize all 5 agents
         self.agents = {
             'agent1': TrendStructureAgent(),
@@ -56,8 +56,8 @@ class MasterBrain:
             'agent5': MarketContextAgent()
         }
         
-        # Initialize components
-        self.data_fetcher = MarketDataFetcher()
+        # Initialize components with data source configuration
+        self.data_fetcher = MarketDataFetcher(data_source=data_source)
         self.data_builder = MultiTimeframeDataBuilder(self.data_fetcher)
         self.risk_manager = RiskManager(
             account_balance=ACCOUNT_BALANCE,

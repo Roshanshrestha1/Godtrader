@@ -31,7 +31,8 @@ class SuperAITrader:
     """
     
     def __init__(self):
-        self.master_brain = MasterBrain()
+        from config import DATA_SOURCE
+        self.master_brain = MasterBrain(data_source=DATA_SOURCE)
         self.running = False
         self._shutdown_event = asyncio.Event()
         
@@ -53,18 +54,13 @@ class SuperAITrader:
         
         # Initialize system
         try:
-            # Connect to MT5 (will use demo mode if connection fails)
+            # Connect to data source (Binance/YahooFinance)
             connected = self.master_brain.data_fetcher.connect()
             if connected:
-                logger.info("✅ Connected to MetaTrader 5")
+                logger.info(f"✅ Connected to {self.master_brain.data_fetcher.data_source.upper()} - Real Trading Data")
             else:
-                logger.warning("⚠️ Running in demo mode (no MT5 connection)")
-            
-            # Get account info
-            account_info = self.master_brain.data_fetcher.get_account_info()
-            if account_info:
-                logger.info(f"Account Balance: ${account_info['balance']:,.2f}")
-                self.master_brain.risk_manager.set_account_balance(account_info['balance'])
+                logger.error("❌ Failed to connect to data source")
+                return
             
             # Display system configuration
             self._display_config()
