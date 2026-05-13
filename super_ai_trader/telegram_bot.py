@@ -18,11 +18,18 @@ from telegram.ext import (
     filters
 )
 
+from config import MENU_SYMBOLS, SUPPORTED_TIMEFRAMES
+from utils.formatter import SignalFormatter
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
+
+# User state storage for session management
+user_states = {}  # dict[user_id] = {'state': ..., 'symbol': ..., 'timeframe': ...}
 
 
 class TelegramBot:
@@ -67,6 +74,19 @@ class TelegramBot:
             "Use /help for detailed information."
         )
         await self._send_message(update.effective_chat.id, welcome_message, parse_mode='Markdown')
+        
+        # Send main menu inline keyboard
+        keyboard = [
+            [InlineKeyboardButton('🔍 Find Best Trades by AI', callback_data='find_best_trades')],
+            [InlineKeyboardButton('⚙️ Trading Settings', callback_data='trading_settings')]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        await self._send_message(
+            update.effective_chat.id,
+            "🎛️ *Main Menu*\n\nSelect an option:",
+            reply_markup=reply_markup,
+            parse_mode='Markdown'
+        )
     
     async def help_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Handle /help command."""
@@ -91,21 +111,8 @@ class TelegramBot:
     async def menu_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Handle /menu command - Show interactive menu."""
         keyboard = [
-            [
-                InlineKeyboardButton("📊 System Status", callback_data='status'),
-                InlineKeyboardButton("📈 Recent Signals", callback_data='signals')
-            ],
-            [
-                InlineKeyboardButton("▶️ Start Trading", callback_data='start_trading'),
-                InlineKeyboardButton("⏹️ Stop Trading", callback_data='stop_trading')
-            ],
-            [
-                InlineKeyboardButton("💰 Account Balance", callback_data='balance'),
-                InlineKeyboardButton("🔄 Refresh Analysis", callback_data='refresh')
-            ],
-            [
-                InlineKeyboardButton("❓ Help", callback_data='help')
-            ]
+            [InlineKeyboardButton("🔍 Find Best Trades by AI", callback_data='find_best_trades')],
+            [InlineKeyboardButton("⚙️ Trading Settings", callback_data='trading_settings')]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
@@ -267,11 +274,38 @@ class TelegramBot:
     async def button_callback(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Handle inline button callbacks from menu."""
         query = update.callback_query
+        user_id = update.effective_user.id
         await query.answer()
         
         action = query.data
         
-        if action == 'status':
+        # Main menu actions
+        if action == 'find_best_trades':
+            await self.handle_find_best_trades(update, context)
+        elif action == 'trading_settings':
+            await self.handle_trading_settings(update, context)
+        # Asset group selection
+        elif action.startswith('group_'):
+            group = action.replace('group_', '')
+            await self.handle_asset_group_selection(update, context, group)
+        # Asset selection
+        elif action.startswith('asset_'):
+            symbol = action.replace('asset_', '')
+            await self.handle_asset_selection(update, context, user_id, symbol)
+        # Timeframe selection
+        elif action.startswith('tf_'):
+            tf = action.replace('tf_', '')
+            await self.handle_timeframe_selection(update, context, user_id, tf)
+        # Analyze selected pair
+        elif action == 'analyze_pair':
+            await self.handle_analyze_pair(update, context, user_id)
+        # Back buttons
+        elif action == 'main_menu':
+            await self.handle_back_to_main_menu(update, context)
+        elif action == 'back_to_settings':
+            await self.handle_back_to_settings(update, context)
+        # Legacy actions (keep for backward compatibility)
+        elif action == 'status':
             await self.status_command(update, context)
         elif action == 'signals':
             await self.signals_command(update, context)
@@ -285,6 +319,182 @@ class TelegramBot:
             await self.refresh_command(update, context)
         elif action == 'help':
             await self.help_command(update, context)
+    
+    async def handle_find_best_trades(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Handle 'Find Best Trades by AI' button."""
+        if not self.master_brain:
+            await query.edit_message_text('❌ Master Brain not initialized.')
+            return
+        
+        query = update.callback_query
+        await query.edit_message_text('🔍 Analyzing all symbols... Please wait.')
+        
+        try:
+            top_trades = await self.master_brain.analyze_all_symbols()
+            
+            if not top_trades:
+                await context.bot.send_message(
+                    chat_id=update.effective_chat.id,
+                    text='No high-confidence trades found at this time. Please check later.'
+                )
+                return
+            
+            # Format and send top 3 trades
+            messages = SignalFormatter.format_best_trades_cards(top_trades[:3])
+            
+            for msg in messages:
+                await context.bot.send_message(
+                    chat_id=update.effective_chat.id,
+                    text=msg,
+                    parse_mode='HTML'
+                )
+                
+        except Exception as e:
+            logger.error(f"Error in find best trades: {e}")
+            await context.bot.send_message(
+                chat_id=update.effective_chat.id,
+                text=f'❌ Error: {str(e)}'
+            )
+    
+    async def handle_trading_settings(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Handle 'Trading Settings' button - show asset groups."""
+        keyboard = []
+        
+        for group_name in MENU_SYMBOLS.keys():
+            keyboard.append([InlineKeyboardButton(f"📊 {group_name}", callback_data=f'group_{group_name}')])
+        
+        keyboard.append([InlineKeyboardButton('🔙 Back', callback_data='main_menu')])
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        
+        await update.callback_query.edit_message_text(
+            text="⚙️ *Trading Settings*\n\nSelect an asset group:",
+            reply_markup=reply_markup,
+            parse_mode='Markdown'
+        )
+    
+    async def handle_asset_group_selection(self, update: Update, context: ContextTypes.DEFAULT_TYPE, group: str):
+        """Handle asset group selection - show symbols in group."""
+        symbols = MENU_SYMBOLS.get(group, [])
+        
+        keyboard = []
+        for symbol in symbols:
+            keyboard.append([InlineKeyboardButton(symbol, callback_data=f'asset_{symbol}')])
+        
+        keyboard.append([InlineKeyboardButton('🔙 Back', callback_data='back_to_settings')])
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        
+        await update.callback_query.edit_message_text(
+            text=f"📊 *{group}*\n\nSelect a symbol:",
+            reply_markup=reply_markup,
+            parse_mode='Markdown'
+        )
+    
+    async def handle_asset_selection(self, update: Update, context: ContextTypes.DEFAULT_TYPE, user_id: int, symbol: str):
+        """Handle symbol selection - store in session and prompt for timeframe."""
+        # Store symbol in user session
+        if user_id not in user_states:
+            user_states[user_id] = {}
+        
+        user_states[user_id]['symbol'] = symbol
+        user_states[user_id]['state'] = 'CHOOSE_TF'
+        
+        # Show timeframe selection
+        keyboard = []
+        for tf in SUPPORTED_TIMEFRAMES:
+            keyboard.append([InlineKeyboardButton(tf, callback_data=f'tf_{tf}')])
+        
+        keyboard.append([InlineKeyboardButton('🔙 Back', callback_data='back_to_settings')])
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        
+        await update.callback_query.edit_message_text(
+            text=f"✅ Selected: *{symbol}*\n\n⏱️ Now select a timeframe:",
+            reply_markup=reply_markup,
+            parse_mode='Markdown'
+        )
+    
+    async def handle_timeframe_selection(self, update: Update, context: ContextTypes.DEFAULT_TYPE, user_id: int, tf: str):
+        """Handle timeframe selection - store in session and show analyze button."""
+        # Store timeframe in user session
+        if user_id not in user_states:
+            user_states[user_id] = {}
+        
+        user_states[user_id]['timeframe'] = tf
+        user_states[user_id]['state'] = 'READY_TO_ANALYZE'
+        
+        symbol = user_states[user_id].get('symbol', 'Unknown')
+        
+        # Show analyze button
+        keyboard = [
+            [InlineKeyboardButton("🧠 Analyze Selected Pair", callback_data='analyze_pair')],
+            [InlineKeyboardButton('🔙 Back', callback_data='back_to_settings')]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        
+        await update.callback_query.edit_message_text(
+            text=f"✅ Symbol: *{symbol}*\n✅ Timeframe: *{tf}*\n\nReady to analyze!",
+            reply_markup=reply_markup,
+            parse_mode='Markdown'
+        )
+    
+    async def handle_analyze_pair(self, update: Update, context: ContextTypes.DEFAULT_TYPE, user_id: int):
+        """Trigger analysis on selected symbol+timeframe."""
+        state = user_states.get(user_id, {})
+        symbol = state.get('symbol')
+        tf = state.get('timeframe')
+        
+        if not symbol or not tf:
+            await context.bot.send_message(
+                chat_id=update.effective_chat.id,
+                text='❌ Please select a currency and timeframe first.'
+            )
+            return
+        
+        await update.callback_query.edit_message_text('🧠 Analyzing... Please wait.')
+        
+        try:
+            if not self.master_brain:
+                await context.bot.send_message(
+                    chat_id=update.effective_chat.id,
+                    text='❌ Master Brain not initialized.'
+                )
+                return
+            
+            analysis = await self.master_brain.analyze_single(symbol, tf)
+            msg = SignalFormatter.format_single_analysis(analysis)
+            
+            await context.bot.send_message(
+                chat_id=update.effective_chat.id,
+                text=msg,
+                parse_mode='HTML'
+            )
+            
+            # Reset user state
+            user_states[user_id] = {}
+            
+        except Exception as e:
+            logger.error(f"Error in analyze pair: {e}")
+            await context.bot.send_message(
+                chat_id=update.effective_chat.id,
+                text=f'❌ Error: {str(e)}'
+            )
+    
+    async def handle_back_to_main_menu(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Handle back to main menu."""
+        keyboard = [
+            [InlineKeyboardButton('🔍 Find Best Trades by AI', callback_data='find_best_trades')],
+            [InlineKeyboardButton('⚙️ Trading Settings', callback_data='trading_settings')]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        
+        await update.callback_query.edit_message_text(
+            text="🎛️ *Main Menu*\n\nSelect an option:",
+            reply_markup=reply_markup,
+            parse_mode='Markdown'
+        )
+    
+    async def handle_back_to_settings(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Handle back to trading settings."""
+        await self.handle_trading_settings(update, context)
     
     async def send_signal(self, signal: dict):
         """
