@@ -15,6 +15,17 @@ DATA_SOURCE = 'auto'
 # Trading Symbols
 SYMBOLS = ["EURUSD", "GBPUSD", "USDJPY", "BTCUSD", "ETHUSD"]
 
+# Menu Symbols - Grouped for interactive selection
+MENU_SYMBOLS = {
+    "Forex Majors": ["EURUSD", "GBPUSD", "USDJPY", "USDCHF", "AUDUSD", "USDCAD", "NZDUSD"],
+    "Crypto": ["BTCUSD", "ETHUSD", "BNBUSD", "XRPUSD"],
+    "Commodities": ["XAUUSD", "XAGUSD", "USOIL", "UKOIL"],
+    "Indices": ["US30", "SPX500", "NAS100", "GER40"]
+}
+
+# Supported Timeframes for manual selection
+SUPPORTED_TIMEFRAMES = ["1m", "5m", "15m", "1h", "4h", "1D"]
+
 # Timeframes
 TIMEFRAMES = {
     "m1": 1,

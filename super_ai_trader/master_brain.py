@@ -12,7 +12,7 @@ import pandas as pd
 
 from config import (
     MIN_AGREEING_AGENTS, CONFIDENCE_THRESHOLD, AGENT5_BLOCK_ENABLED,
-    SYMBOLS, RISK_PER_TRADE, ACCOUNT_BALANCE
+    SYMBOLS, RISK_PER_TRADE, ACCOUNT_BALANCE, MENU_SYMBOLS, SUPPORTED_TIMEFRAMES
 )
 from agents.base_agent import SignalResult
 from agents.agent1_trend_structure import TrendStructureAgent
@@ -226,6 +226,234 @@ class MasterBrain:
                 self.signals_sent.append(signal)
         
         return signals
+    
+    async def analyze_all_symbols(self) -> List[dict]:
+        """
+        Analyze all symbols and return sorted list by confidence score.
+        This method runs analysis regardless of trading_enabled flag.
+        
+        Returns:
+            List of signal dictionaries sorted by (confidence * agreeing_agents)
+        """
+        all_signals = []
+        
+        # Temporarily enable trading for analysis
+        original_state = self.trading_enabled
+        self.trading_enabled = True
+        
+        for symbol in SYMBOLS:
+            try:
+                # Fetch multi-timeframe data
+                data = self.data_builder.build_aligned_data(symbol, reference_tf=1)
+                
+                if not data:
+                    continue
+                
+                current_price = self.data_fetcher.get_current_price(symbol)
+                
+                if not current_price:
+                    continue
+                
+                # Collect signals from all agents
+                agent_signals = {}
+                for agent_id, agent in self.agents.items():
+                    if agent.enabled:
+                        signal = agent.analyze(data, current_price)
+                        agent_signals[agent_id] = signal
+                
+                # Check Agent 5 veto
+                agent5_signal = agent_signals.get('agent5')
+                if agent5_signal and agent5_signal.signal == 'NO_TRADE':
+                    continue
+                
+                # Aggregate votes from agents 1-4
+                buy_votes = 0
+                sell_votes = 0
+                total_confidence = 0
+                vote_count = 0
+                all_reasons = []
+                
+                for agent_id in ['agent1', 'agent2', 'agent3', 'agent4']:
+                    signal = agent_signals.get(agent_id)
+                    if signal:
+                        vote_count += 1
+                        if signal.signal == 'BUY':
+                            buy_votes += 1
+                            total_confidence += signal.confidence
+                            all_reasons.extend(signal.reasons[:2])
+                        elif signal.signal == 'SELL':
+                            sell_votes += 1
+                            total_confidence += signal.confidence
+                            all_reasons.extend(signal.reasons[:2])
+                
+                # Check thresholds
+                max_votes = max(buy_votes, sell_votes)
+                
+                if max_votes < self.min_agreeing_agents:
+                    continue
+                
+                direction = 'BUY' if buy_votes > sell_votes else 'SELL'
+                avg_confidence = total_confidence / vote_count if vote_count > 0 else 0
+                
+                if avg_confidence < self.confidence_threshold:
+                    continue
+                
+                # Calculate trade parameters
+                entry_price = current_price['ask'] if direction == 'BUY' else current_price['bid']
+                df_1m = data.get(1)
+                atr = self._calculate_atr(df_1m)
+                
+                stop_loss = self.risk_manager.calculate_stop_loss(entry_price, atr, direction)
+                take_profit = self.risk_manager.calculate_take_profit(entry_price, atr, direction)
+                lots = self.risk_manager.calculate_position_size(entry_price, stop_loss)
+                
+                # Build signal with score for sorting
+                signal_result = {
+                    'symbol': symbol,
+                    'direction': direction,
+                    'entry': entry_price,
+                    'stop_loss': stop_loss,
+                    'take_profit': take_profit,
+                    'lots': lots,
+                    'confidence': int(avg_confidence),
+                    'reasons': all_reasons,
+                    'timestamp': datetime.now(),
+                    'buy_votes': buy_votes,
+                    'sell_votes': sell_votes,
+                    'atr': atr,
+                    'score': avg_confidence * max_votes  # For sorting
+                }
+                
+                all_signals.append(signal_result)
+                
+            except Exception as e:
+                logger.error(f"Error analyzing {symbol}: {e}")
+                continue
+        
+        # Restore original trading state
+        self.trading_enabled = original_state
+        
+        # Sort by score descending and return
+        all_signals.sort(key=lambda x: x['score'], reverse=True)
+        return all_signals
+    
+    async def analyze_single(self, symbol: str, timeframe: str = "1h") -> dict:
+        """
+        Analyze a single symbol with specified timeframe.
+        Returns full analysis including all agent outputs even if no trade signal.
+        
+        Args:
+            symbol: Trading symbol to analyze
+            timeframe: Timeframe string (e.g., "1h", "15m")
+        
+        Returns:
+            Dictionary with full analysis data
+        """
+        result = {
+            'symbol': symbol,
+            'timeframe': timeframe,
+            'timestamp': datetime.now(),
+            'agent_signals': {},
+            'decision': 'NO_TRADE',
+            'avg_confidence': 0,
+            'entry': 0,
+            'stop_loss': 0,
+            'take_profit': 0,
+            'aggregated_reasons': []
+        }
+        
+        try:
+            # Map timeframe string to minutes
+            tf_map = {
+                "1m": 1, "5m": 5, "15m": 15, "1h": 60, "4h": 240, "1D": 1440
+            }
+            tf_minutes = tf_map.get(timeframe, 60)
+            
+            # Fetch multi-timeframe data
+            data = self.data_builder.build_aligned_data(symbol, reference_tf=tf_minutes)
+            
+            if not data:
+                result['aggregated_reasons'].append("No data available")
+                return result
+            
+            current_price = self.data_fetcher.get_current_price(symbol)
+            
+            if not current_price:
+                result['aggregated_reasons'].append("Cannot get current price")
+                return result
+            
+            # Collect signals from all agents
+            agent_signals = {}
+            for agent_id, agent in self.agents.items():
+                if agent.enabled:
+                    signal = agent.analyze(data, current_price)
+                    agent_signals[agent_id] = {
+                        'signal': signal.signal,
+                        'confidence': signal.confidence,
+                        'reasons': signal.reasons
+                    }
+                    result['agent_signals'][agent_id] = agent_signals[agent_id]
+            
+            # Check Agent 5 veto
+            agent5_signal = agent_signals.get('agent5')
+            if agent5_signal and agent5_signal['signal'] == 'NO_TRADE':
+                result['decision'] = 'NO_TRADE'
+                result['aggregated_reasons'].append("Agent 5 veto - unfavorable market context")
+                return result
+            
+            # Aggregate votes from agents 1-4
+            buy_votes = 0
+            sell_votes = 0
+            total_confidence = 0
+            vote_count = 0
+            all_reasons = []
+            
+            for agent_id in ['agent1', 'agent2', 'agent3', 'agent4']:
+                signal = agent_signals.get(agent_id)
+                if signal:
+                    vote_count += 1
+                    if signal['signal'] == 'BUY':
+                        buy_votes += 1
+                        total_confidence += signal['confidence']
+                        all_reasons.extend(signal['reasons'][:2])
+                    elif signal['signal'] == 'SELL':
+                        sell_votes += 1
+                        total_confidence += signal['confidence']
+                        all_reasons.extend(signal['reasons'][:2])
+            
+            # Determine direction
+            if buy_votes > sell_votes:
+                direction = 'BUY'
+            elif sell_votes > buy_votes:
+                direction = 'SELL'
+            else:
+                direction = 'NO_TRADE'
+            
+            avg_confidence = total_confidence / vote_count if vote_count > 0 else 0
+            
+            result['decision'] = direction
+            result['avg_confidence'] = avg_confidence
+            result['aggregated_reasons'] = all_reasons
+            
+            # Calculate trade parameters if we have a direction
+            if direction != 'NO_TRADE':
+                entry_price = current_price['ask'] if direction == 'BUY' else current_price['bid']
+                df_1m = data.get(1)
+                atr = self._calculate_atr(df_1m)
+                
+                stop_loss = self.risk_manager.calculate_stop_loss(entry_price, atr, direction)
+                take_profit = self.risk_manager.calculate_take_profit(entry_price, atr, direction)
+                
+                result['entry'] = entry_price
+                result['stop_loss'] = stop_loss
+                result['take_profit'] = take_profit
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"Error in single analysis for {symbol}: {e}")
+            result['aggregated_reasons'].append(f"Analysis error: {str(e)}")
+            return result
     
     def format_and_send_signal(self, signal: dict, telegram_bot=None) -> str:
         """

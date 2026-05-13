@@ -237,3 +237,117 @@ System Features:
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 """
+
+    @staticmethod
+    def format_best_trades_cards(top_trades: list) -> list:
+        """
+        Format top trades as individual cards for Telegram.
+        
+        Args:
+            top_trades: List of trade dictionaries with signal data
+        
+        Returns:
+            List of formatted message strings
+        """
+        messages = []
+        
+        for rank, trade in enumerate(top_trades, 1):
+            emoji = "🟢" if trade['direction'] == 'BUY' else "🔴"
+            confidence_bar = SignalFormatter.generate_confidence_bar(trade.get('confidence', 0))
+            
+            # Calculate R:R ratio
+            risk = abs(trade['entry'] - trade['stop_loss'])
+            reward = abs(trade['take_profit'] - trade['entry'])
+            rr_ratio = round(reward / risk, 1) if risk > 0 else 0
+            
+            reasons_text = "\n".join([f"• {r}" for r in trade.get('reasons', [])[:5]])
+            
+            message = f"""╔═══════════════════════════════╗
+║ 🤖 AI TOP TRADE #{rank} ║
+╚═══════════════════════════════╝
+
+📍 {trade['symbol']} • {trade['entry']:.5f}
+🕐 {trade.get('timestamp', datetime.now()).strftime('%Y-%m-%d %H:%M:%S')}
+
+{emoji} {trade['direction']} | {trade.get('confidence', 0)}% | {confidence_bar}
+
+━━━━━━━━━━━━━━━━━━━━━━━
+📊 ENTRY: {trade['entry']:.5f}
+🛑 SL: {trade['stop_loss']:.5f}
+🎯 TP: {trade['take_profit']:.5f}
+💰 R:R: 1:{rr_ratio}
+
+━━━━━━━━━━━━━━━━━━━━━━━
+📋 AGENT REASONS:
+{reasons_text}
+━━━━━━━━━━━━━━━━━━━━━━━"""
+            
+            messages.append(message)
+        
+        return messages
+    
+    @staticmethod
+    def format_single_analysis(analysis: dict) -> str:
+        """
+        Format single pair analysis with all agent votes.
+        
+        Args:
+            analysis: Dictionary with full analysis data including agent outputs
+        
+        Returns:
+            Formatted message string
+        """
+        symbol = analysis.get('symbol', 'Unknown')
+        timeframe = analysis.get('timeframe', 'N/A')
+        timestamp = analysis.get('timestamp', datetime.now())
+        
+        # Extract agent signals
+        agent_signals = analysis.get('agent_signals', {})
+        
+        agent1 = agent_signals.get('agent1', {})
+        agent2 = agent_signals.get('agent2', {})
+        agent3 = agent_signals.get('agent3', {})
+        agent4 = agent_signals.get('agent4', {})
+        agent5 = agent_signals.get('agent5', {})
+        
+        agent1_signal = agent1.get('signal', 'NO_TRADE')
+        agent1_conf = agent1.get('confidence', 0)
+        agent2_signal = agent2.get('signal', 'NO_TRADE')
+        agent3_signal = agent3.get('signal', 'NO_TRADE')
+        agent4_signal = agent4.get('signal', 'NO_TRADE')
+        agent5_status = agent5.get('signal', 'NO_TRADE')
+        
+        # Final decision
+        decision = analysis.get('decision', 'NO_TRADE')
+        avg_conf = analysis.get('avg_confidence', 0)
+        entry = analysis.get('entry', 0)
+        sl = analysis.get('stop_loss', 0)
+        tp = analysis.get('take_profit', 0)
+        reasons = analysis.get('aggregated_reasons', [])
+        
+        reasons_text = "\n".join([f"• {r}" for r in reasons[:5]]) if reasons else "No strong confluence detected"
+        
+        decision_emoji = "🟢" if decision == 'BUY' else ("🔴" if decision == 'SELL' else "⚪")
+        
+        message = f"""╔═══════════════════════════════╗
+║ 🧠 AI ANALYSIS ║
+╚═══════════════════════════════╝
+
+📍 {symbol} • {timeframe}
+🕐 {timestamp.strftime('%Y-%m-%d %H:%M:%S')}
+
+🔹 Agent 1 (Trend): {agent1_signal} ({agent1_conf}%)
+🔹 Agent 2 (Volume): {agent2_signal}
+🔹 Agent 3 (PriceAction): {agent3_signal}
+🔹 Agent 4 (Indicators): {agent4_signal}
+🔹 Agent 5 (Context): {agent5_status}
+
+━━━━━━━━━━━━━━━━━━━━━━━
+📊 FINAL DECISION: {decision_emoji} {decision} (confidence {avg_conf:.1f}%)
+🟢 ENTRY: {entry:.5f}
+🛑 SL: {sl:.5f}
+🎯 TP: {tp:.5f}
+
+📋 REASONS: {reasons_text}"""
+        
+        return message
