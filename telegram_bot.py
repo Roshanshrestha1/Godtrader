@@ -243,44 +243,114 @@ def load_cached_trades() -> list:
 
 
 async def handle_find_best_trades(query, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Handle 'Find Best Trades' button click - INSTANT response using cache."""
+    """
+    Handle 'Find Best Trades' button click - Shows THE ABSOLUTE BEST trades.
+    Uses enhanced cache with best_buy, best_sell, and highest_confidence categories.
+    """
     try:
-        # First, try to load from cache (instant response)
-        top_trades = load_cached_trades()
+        # Load full cache data (instant response)
+        cache_data = load_cache_data()
         
-        if not top_trades:
-            # No cache available, show message and trigger background scan
+        if not cache_data or not cache_data.get('top_trades'):
+            # No cache available
             await query.edit_message_text(
-                text="🔍 No recent scan data available.\n\nThe market scanner is starting now...\nPlease wait ~2-3 minutes for the first complete scan.\n\n💡 Tip: Run the market_scanner.py in the background for instant results!"
+                text="🔍 No recent scan data available.\n\n"
+                     "⚡ The AI scanner hasn't completed a scan yet.\n\n"
+                     "💡 Please ensure market_scanner.py is running in the background.\n"
+                     "It scans all {total} markets every 5 minutes!".format(total=len(config.get_all_symbols()))
             )
             return
         
-        # Send introduction message
-        intro_text = f"╔═══════════════════════════════╗\n║ 🎯 TOP {min(3, len(top_trades))} TRADE SIGNALS        ║\n╚═══════════════════════════════╝\n\nHere are the best opportunities right now:\n\n⏱️ Last scan: {datetime.fromisoformat(load_cache_data().get('timestamp', 'unknown')).strftime('%H:%M:%S')}"
+        # Get enhanced data
+        best_buy = cache_data.get('best_buy')
+        best_sell = cache_data.get('best_sell')
+        highest_confidence = cache_data.get('highest_confidence')
+        top_trades = cache_data.get('top_trades', [])
+        summary = cache_data.get('summary', {})
+        
+        # Calculate age
+        timestamp_str = cache_data.get('timestamp', '')
+        age_text = "Unknown"
+        if timestamp_str:
+            try:
+                cache_time = datetime.fromisoformat(timestamp_str)
+                age_minutes = (datetime.now() - cache_time).total_seconds() / 60
+                age_text = f"{int(age_minutes)} min ago"
+            except:
+                pass
+        
+        # Send comprehensive summary
+        intro_text = (
+            f"╔═══════════════════════════════╗\n"
+            f"║ 🎯 AI MARKET SCANNER RESULTS  ║\n"
+            f"╚═══════════════════════════════╝\n\n"
+            f"⏱️ Last scan: {age_text}\n"
+            f"📊 Symbols scanned: {cache_data.get('total_symbols_scanned', 0)}\n"
+            f"✅ Success rate: {cache_data.get('success_rate_pct', 0)}%\n"
+            f"📈 Buy signals: {summary.get('buy_count', 0)}\n"
+            f"📉 Sell signals: {summary.get('sell_count', 0)}\n"
+            f"🎯 Avg confidence: {summary.get('avg_confidence', 0)}%\n\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🏆 THE ABSOLUTE BEST TRADES:\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━"
+        )
         await context.bot.send_message(
             chat_id=query.message.chat_id,
             text=intro_text
         )
         
-        # Format and send trade cards
-        trade_cards = format_best_trades_cards(top_trades[:3])
-        
-        for card in trade_cards:
+        # Show BEST BUY if available
+        if best_buy:
+            best_buy_card = format_single_analysis(best_buy)
+            best_buy_card = f"🟢 **#1 BEST BUY** 🟢\n{best_buy_card}"
             await context.bot.send_message(
                 chat_id=query.message.chat_id,
-                text=card
+                text=best_buy_card
             )
-            await asyncio.sleep(0.3)  # Small delay between messages
+            await asyncio.sleep(0.3)
+        
+        # Show BEST SELL if available
+        if best_sell:
+            best_sell_card = format_single_analysis(best_sell)
+            best_sell_card = f"🔴 **#1 BEST SELL** 🔴\n{best_sell_card}"
+            await context.bot.send_message(
+                chat_id=query.message.chat_id,
+                text=best_sell_card
+            )
+            await asyncio.sleep(0.3)
+        
+        # Show HIGHEST CONFIDENCE if different from best buy/sell
+        if highest_confidence and highest_confidence != best_buy and highest_confidence != best_sell:
+            hc_card = format_single_analysis(highest_confidence)
+            hc_card = f"⭐ **HIGHEST CONFIDENCE** ({highest_confidence['confidence']}%)\n{hc_card}"
+            await context.bot.send_message(
+                chat_id=query.message.chat_id,
+                text=hc_card
+            )
+            await asyncio.sleep(0.3)
+        
+        # Show additional top trades (ranks 4-6)
+        additional_trades = [t for t in top_trades[3:6] if t not in [best_buy, best_sell, highest_confidence]]
+        if additional_trades:
+            await context.bot.send_message(
+                chat_id=query.message.chat_id,
+                text=f"\n━━━━━━━━━━━━━━━━━━━━━━━\n📋 **MORE TOP TRADES** (Ranks 4-6):"
+            )
+            trade_cards = format_best_trades_cards(additional_trades)
+            for card in trade_cards:
+                await context.bot.send_message(chat_id=query.message.chat_id, text=card)
+                await asyncio.sleep(0.3)
         
         # Send back to menu button
         keyboard = get_main_menu_keyboard()
         await context.bot.send_message(
             chat_id=query.message.chat_id,
-            text="\n━━━━━━━━━━━━━━━━━━━━━━━\nUse the buttons below for more actions:",
+            text="\n━━━━━━━━━━━━━━━━━━━━━━━\n💡 These are the BEST opportunities the AI found across ALL markets!\n\nWhat would you like to do next?",
             reply_markup=keyboard
         )
         
-        logger.info(f"Sent {len(trade_cards)} cached trade signals to user {query.from_user.id}")
+        total_sent = sum([1 if best_buy else 0, 1 if best_sell else 0, 1 if (highest_confidence and highest_confidence != best_buy and highest_confidence != best_sell) else 0, len(additional_trades)])
+        logger.info(f"Sent {total_sent} premium trade signals to user {query.from_user.id}")
         
     except Exception as e:
         logger.error(f"Error in find_best_trades: {e}", exc_info=True)

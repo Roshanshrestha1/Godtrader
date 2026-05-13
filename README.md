@@ -1,8 +1,9 @@
 # 🚀 AI Trading System - Complete Documentation
 
-**Version:** 2.0 (Exness Full Market + Background Scanner)  
+**Version:** 3.0 (Aggressive Scanner + Best-of-Best Selection)  
 **Status:** Production Ready  
-**Response Time:** <1 second (instant via cache)
+**Response Time:** <1 second (instant via cache)  
+**Scan Speed:** ~60-90 seconds for all markets (parallel processing)
 
 ---
 
