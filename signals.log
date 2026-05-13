@@ -1,0 +1,6 @@
+2026-05-13 08:34:14,316 - __main__ - INFO - Starting Telegram bot...
+2026-05-13 08:34:15,189 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8776068686:AAF_niFN9leA9GFAAglZTJUMb6Pj9dv46cY/getMe "HTTP/1.1 200 OK"
+2026-05-13 08:34:15,358 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8776068686:AAF_niFN9leA9GFAAglZTJUMb6Pj9dv46cY/deleteWebhook "HTTP/1.1 200 OK"
+2026-05-13 08:34:15,360 - telegram.ext.Application - INFO - Application started
+2026-05-13 08:34:25,855 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8776068686:AAF_niFN9leA9GFAAglZTJUMb6Pj9dv46cY/getUpdates "HTTP/1.1 200 OK"
+2026-05-13 08:34:36,020 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8776068686:AAF_niFN9leA9GFAAglZTJUMb6Pj9dv46cY/getUpdates "HTTP/1.1 200 OK"

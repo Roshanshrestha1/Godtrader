@@ -7,6 +7,7 @@ import yaml
 import os
 from pathlib import Path
 from typing import Dict, List, Any, Optional
+from dotenv import load_dotenv
 
 
 class Config:
@@ -23,6 +24,11 @@ class Config:
     
     def _load_config(self) -> None:
         """Load configuration from config.yaml file."""
+        # Load .env file first
+        env_path = Path(__file__).parent / ".env"
+        if env_path.exists():
+            load_dotenv(dotenv_path=env_path)
+        
         config_path = Path(__file__).parent / "config.yaml"
         
         if not config_path.exists():

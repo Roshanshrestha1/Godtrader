@@ -1,1 +1,13 @@
-Nothing should be ignored based on the provided file changes, as they only include source/config files (.md, .py) and no build artifacts, dependencies, or temporary files.
+```
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Environment files
+.env
+.env.local
+*.env.*
+
+# Log files
+*.log
+```
