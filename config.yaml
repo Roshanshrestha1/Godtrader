@@ -1,0 +1,290 @@
+# Stable Stock Analysis System Configuration
+
+analysis:
+  main_timeframe: "1h"
+  entry_timeframe: "5m"
+  adx_threshold: 25
+  ema_period: 200
+  volume_sma_period: 20
+  sweep_lookback_hours: 24
+  
+risk:
+  default_stop_atr_multiplier: 1.5
+  default_target_atr_multiplier: 3.0
+  
+data:
+  max_staleness_seconds: 120
+  retry_attempts: 3
+  retry_backoff_base: 1.0
+  
+output:
+  log_file: "signals.log"
+  verbose: true
+
+# Telegram Bot Configuration
+telegram:
+  # Bot token will be loaded from environment variable TELEGRAM_BOT_TOKEN
+  admin_user_ids: []  # Add your Telegram user ID(s) here for access control
+
+# Symbols Configuration - Full Exness Asset List
+symbols:
+  # Forex Majors (8 Pairs)
+  forex_majors:
+    - "EURUSD"
+    - "GBPUSD"
+    - "USDJPY"
+    - "USDCHF"
+    - "AUDUSD"
+    - "USDCAD"
+    - "NZDUSD"
+    - "EURGBP"
+  
+  # Forex Minors & Exotics (Popular on Exness)
+  forex_minors_exotics:
+    - "EURJPY"
+    - "GBPJPY"
+    - "EURCHF"
+    - "EURAUD"
+    - "EURCAD"
+    - "AUDCAD"
+    - "AUDJPY"
+    - "CADJPY"
+    - "CHFJPY"
+    - "NZDJPY"
+    - "GBPAUD"
+    - "GBPCAD"
+    - "GBPCHF"
+    - "GBPNZD"
+    - "AUDNZD"
+    - "CADCHF"
+    - "EURNZD"
+    - "NZDCAD"
+    - "NZDCHF"
+    - "USDZAR"
+    - "USDMXN"
+    - "USDTRY"
+    - "USDSGD"
+    - "USDHKD"
+    - "USDNOK"
+    - "USDSEK"
+    - "USDDKK"
+    - "USDPLN"
+
+  # Cryptocurrencies (Spot & CFDs)
+  crypto:
+    - "BTCUSD"
+    - "ETHUSD"
+    - "LTCUSD"
+    - "XRPUSD"
+    - "BCHUSD"
+    - "ADAUSD"
+    - "SOLUSD"
+    - "DOTUSD"
+    - "DOGEUSD"
+    - "AVAXUSD"
+    - "MATICUSD"
+    - "LINKUSD"
+    - "UNIUSD"
+    - "ATOMUSD"
+    - "XLMUSD"
+    - "ETCUSD"
+    - "FILUSD"
+    - "TRXUSD"
+    - "EOSUSD"
+    - "AAVEUSD"
+    - "XMRUSD"
+    - "ALGOUSD"
+    - "VETUSD"
+    - "ICPUSD"
+    - "THETAUSD"
+
+  # Metals (Precious Metals)
+  metals:
+    - "XAUUSD"  # Gold
+    - "XAGUSD"  # Silver
+    - "XPTUSD"  # Platinum
+    - "XPDUSD"  # Palladium
+
+  # Energies
+  energies:
+    - "USOIL"   # WTI Crude Oil
+    - "UKOIL"   # Brent Crude Oil
+    - "NGAS"    # Natural Gas
+
+  # Major Indices (CFDs)
+  indices:
+    - "US30"    # Dow Jones
+    - "US500"   # S&P 500
+    - "NAS100"  # Nasdaq 100
+    - "GER40"   # DAX
+    - "UK100"   # FTSE 100
+    - "JP225"   # Nikkei 225
+    - "CHN50"   # China A50
+    - "HK50"    # Hang Seng
+    - "EU50"    # Euro Stoxx 50
+    - "AUS200"  # ASX 200
+
+  # Major Stocks (CFDs - US Tech Giants & Blue Chips)
+  stocks_us:
+    - "AAPL"    # Apple
+    - "MSFT"    # Microsoft
+    - "GOOGL"   # Alphabet
+    - "AMZN"    # Amazon
+    - "TSLA"    # Tesla
+    - "META"    # Meta Platforms
+    - "NVDA"    # NVIDIA
+    - "BRK.B"   # Berkshire Hathaway
+    - "JPM"     # JPMorgan Chase
+    - "V"       # Visa
+    - "JNJ"     # Johnson & Johnson
+    - "WMT"     # Walmart
+    - "PG"      # Procter & Gamble
+    - "MA"      # Mastercard
+    - "UNH"     # UnitedHealth
+    - "HD"      # Home Depot
+    - "DIS"     # Disney
+    - "BAC"     # Bank of America
+    - "NFLX"    # Netflix
+    - "ADBE"    # Adobe
+    - "CRM"     # Salesforce
+    - "CSCO"    # Cisco
+    - "PEP"     # PepsiCo
+    - "KO"      # Coca-Cola
+    - "INTC"    # Intel
+    - "AMD"     # AMD
+    - "ORCL"    # Oracle
+    - "IBM"     # IBM
+    - "QCOM"    # Qualcomm
+    - "BA"      # Boeing
+  
+# Symbol Mapping for Data Fetcher (Exness Name -> Yahoo Finance Ticker)
+# Most are identical, but some need adjustment for yfinance compatibility
+symbol_mapping:
+  # Forex (yfinance uses =X convention)
+  "EURUSD": "EURUSD=X"
+  "GBPUSD": "GBPUSD=X"
+  "USDJPY": "USDJPY=X"
+  "USDCHF": "USDCHF=X"
+  "AUDUSD": "AUDUSD=X"
+  "USDCAD": "USDCAD=X"
+  "NZDUSD": "NZDUSD=X"
+  "EURGBP": "EURGBP=X"
+  "EURJPY": "EURJPY=X"
+  "GBPJPY": "GBPJPY=X"
+  "EURCHF": "EURCHF=X"
+  "EURAUD": "EURAUD=X"
+  "EURCAD": "EURCAD=X"
+  "AUDCAD": "AUDCAD=X"
+  "AUDJPY": "AUDJPY=X"
+  "CADJPY": "CADJPY=X"
+  "CHFJPY": "CHFJPY=X"
+  "NZDJPY": "NZDJPY=X"
+  "GBPAUD": "GBPAUD=X"
+  "GBPCAD": "GBPCAD=X"
+  "GBPCHF": "GBPCHF=X"
+  "GBPNZD": "GBPNZD=X"
+  "AUDNZD": "AUDNZD=X"
+  "CADCHF": "CADCHF=X"
+  "EURNZD": "EURNZD=X"
+  "NZDCAD": "NZDCAD=X"
+  "NZDCHF": "NZDCHF=X"
+  "USDZAR": "USDZAR=X"
+  "USDMXN": "USDMXN=X"
+  "USDTRY": "USDTRY=X"
+  "USDSGD": "USDSGD=X"
+  "USDHKD": "USDHKD=X"
+  "USDNOK": "USDNOK=X"
+  "USDSEK": "USDSEK=X"
+  "USDDKK": "USDDKK=X"
+  "USDPLN": "USDPLN=X"
+  
+  # Crypto (yfinance uses -USD convention)
+  "BTCUSD": "BTC-USD"
+  "ETHUSD": "ETH-USD"
+  "LTCUSD": "LTC-USD"
+  "XRPUSD": "XRP-USD"
+  "BCHUSD": "BCH-USD"
+  "ADAUSD": "ADA-USD"
+  "SOLUSD": "SOL-USD"
+  "DOTUSD": "DOT-USD"
+  "DOGEUSD": "DOGE-USD"
+  "AVAXUSD": "AVAX-USD"
+  "MATICUSD": "MATIC-USD"
+  "LINKUSD": "LINK-USD"
+  "UNIUSD": "UNI-USD"
+  "ATOMUSD": "ATOM-USD"
+  "XLMUSD": "XLM-USD"
+  "ETCUSD": "ETC-USD"
+  "FILUSD": "FIL-USD"
+  "TRXUSD": "TRX-USD"
+  "EOSUSD": "EOS-USD"
+  "AAVEUSD": "AAVE-USD"
+  "XMRUSD": "XMR-USD"
+  "ALGOUSD": "ALGO-USD"
+  "VETUSD": "VET-USD"
+  "ICPUSD": "ICP-USD"
+  "THETAUSD": "THETA-USD"
+  
+  # Metals (yfinance uses =F convention for futures)
+  "XAUUSD": "GC=F"   # Gold Futures
+  "XAGUSD": "SI=F"   # Silver Futures
+  "XPTUSD": "PL=F"   # Platinum
+  "XPDUSD": "PA=F"   # Palladium
+  
+  # Energies (Futures)
+  "USOIL": "CL=F"    # WTI Crude
+  "UKOIL": "BZ=F"    # Brent Crude
+  "NGAS": "NG=F"     # Natural Gas
+  
+  # Indices (Futures or Index Tickers)
+  "US30": "YM=F"
+  "US500": "ES=F"
+  "NAS100": "NQ=F"
+  "GER40": "^GDAXI"
+  "UK100": "^FTSE"
+  "JP225": "^N225"
+  "CHN50": "000001.SS"
+  "HK50": "^HSI"
+  "EU50": "^STOXX50E"
+  "AUS200": "^AXJO"
+  
+  # Stocks (Direct Tickers)
+  "AAPL": "AAPL"
+  "MSFT": "MSFT"
+  "GOOGL": "GOOGL"
+  "AMZN": "AMZN"
+  "TSLA": "TSLA"
+  "META": "META"
+  "NVDA": "NVDA"
+  "BRK.B": "BRK-B"
+  "JPM": "JPM"
+  "V": "V"
+  "JNJ": "JNJ"
+  "WMT": "WMT"
+  "PG": "PG"
+  "MA": "MA"
+  "UNH": "UNH"
+  "HD": "HD"
+  "DIS": "DIS"
+  "BAC": "BAC"
+  "NFLX": "NFLX"
+  "ADBE": "ADBE"
+  "CRM": "CRM"
+  "CSCO": "CSCO"
+  "PEP": "PEP"
+  "KO": "KO"
+  "INTC": "INTC"
+  "AMD": "AMD"
+  "ORCL": "ORCL"
+  "IBM": "IBM"
+  "QCOM": "QCOM"
+  "BA": "BA"
+  
+# Supported timeframes for analysis
+supported_timeframes: ["1m", "5m", "15m", "1h", "4h", "1d"]
+
+# Master Brain thresholds
+master_brain:
+  min_agents_agree: 4
+  min_confidence: 65
+  agent5_veto_enabled: true
