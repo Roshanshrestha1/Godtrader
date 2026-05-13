@@ -158,7 +158,11 @@ class IndicatorConfluenceAgent(BaseAgent):
             prev_tp = two_pole.iloc[-2]
             
             # Buy signal below +0.5, VIDYA green, delta vol > 20
-            vol_delta = ((volume.iloc[-1] - volume.rolling(20).mean().iloc[-1]) / volume.rolling(20).mean().iloc[-1]) * 100
+            vol_mean = volume.rolling(20).mean().iloc[-1]
+            if pd.isna(vol_mean) or vol_mean == 0:
+                vol_delta = 0
+            else:
+                vol_delta = ((volume.iloc[-1] - vol_mean) / vol_mean) * 100
             
             if current_tp < 0.5 and current_tp > prev_tp and vol_delta > 20:
                 score += 3

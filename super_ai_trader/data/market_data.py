@@ -64,11 +64,18 @@ class MarketDataFetcher:
                     self.exchange.load_markets()
                 except Exception as e:
                     print(f"Failed to connect to Binance: {e}")
-                    return False
+                    # Fallback to yfinance
+                    self.data_source = 'yfinance'
+                    self.connected = True
+                    return True
             self.connected = True
             return True
         elif self.data_source == 'yfinance':
             # yfinance doesn't require connection
+            self.connected = True
+            return True
+        elif self.data_source == 'auto':
+            # Auto mode: already tried binance in __init__, just confirm we're ready
             self.connected = True
             return True
         return False
@@ -93,14 +100,40 @@ class MarketDataFetcher:
     
     def _symbol_to_yfinance(self, symbol: str) -> str:
         """Convert symbol to Yahoo Finance format."""
+        # Already in Yahoo Finance format (contains = or ^ or -)
+        if '=' in symbol or '^' in symbol or '-' in symbol:
+            return symbol
+        
         # Forex: EURUSD -> EURUSD=X
-        if '=' not in symbol:
-            if len(symbol) == 6:  # Likely forex pair
-                return f"{symbol}=X"
-            elif symbol in ['BTCUSD', 'BTC']:
-                return 'BTC-USD'
-            elif symbol in ['ETHUSD', 'ETH']:
-                return 'ETH-USD'
+        if len(symbol) == 6:  # Likely forex pair
+            return f"{symbol}=X"
+        elif symbol in ['BTCUSD', 'BTC']:
+            return 'BTC-USD'
+        elif symbol in ['ETHUSD', 'ETH']:
+            return 'ETH-USD'
+        elif symbol in ['BTCUSD=X']:
+            return 'BTC-USD'
+        elif symbol in ['ETHUSD=X']:
+            return 'ETH-USD'
+        # Commodities
+        elif symbol == 'XAUUSD':
+            return 'GC=F'
+        elif symbol == 'XAGUSD':
+            return 'SI=F'
+        elif symbol == 'USOIL':
+            return 'CL=F'
+        elif symbol == 'UKOIL':
+            return 'BZ=F'
+        # Indices
+        elif symbol == 'US30':
+            return '^DJI'
+        elif symbol == 'SPX500':
+            return '^GSPC'
+        elif symbol == 'NAS100':
+            return '^IXIC'
+        elif symbol == 'GER40':
+            return '^GDAXI'
+        
         return symbol
     
     def fetch_ohlcv(self, symbol: str, timeframe_minutes: int, 

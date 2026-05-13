@@ -12,15 +12,15 @@ TELEGRAM_CHAT_ID = None  # Optional: Set to your chat ID to receive signals, or 
 # Options: 'binance', 'yfinance', 'auto' (auto tries binance first, falls back to yfinance)
 DATA_SOURCE = 'auto'
 
-# Trading Symbols
-SYMBOLS = ["EURUSD", "GBPUSD", "USDJPY", "BTCUSD", "ETHUSD"]
+# Trading Symbols - Only symbols supported by yfinance
+SYMBOLS = ["EURUSD", "GBPUSD", "USDJPY"]
 
 # Menu Symbols - Grouped for interactive selection
 MENU_SYMBOLS = {
     "Forex Majors": ["EURUSD", "GBPUSD", "USDJPY", "USDCHF", "AUDUSD", "USDCAD", "NZDUSD"],
-    "Crypto": ["BTCUSD", "ETHUSD", "BNBUSD", "XRPUSD"],
-    "Commodities": ["XAUUSD", "XAGUSD", "USOIL", "UKOIL"],
-    "Indices": ["US30", "SPX500", "NAS100", "GER40"]
+    "Crypto": ["BTCUSD=X", "ETHUSD=X"],  # Use Yahoo Finance crypto symbols
+    "Commodities": ["GC=F", "SI=F", "CL=F", "BZ=F"],  # Gold, Silver, WTI Oil, Brent Oil
+    "Indices": ["^DJI", "^GSPC", "^IXIC", "^GDAXI"]  # DJIA, S&P500, NASDAQ, DAX
 }
 
 # Supported Timeframes for manual selection
